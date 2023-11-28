@@ -1,0 +1,2 @@
+class UsersRecipesController < ApplicationController
+end
