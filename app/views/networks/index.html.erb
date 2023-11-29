@@ -1,23 +1,16 @@
-<div class="grill"><p> Networks Around you</p></div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="card-container pl-3 pr-3 pb-3">
-        <div class="row">
-          <% @networks.each_slice(5) do |networks_slice| %>
-            <div class="col-md-3">
-              <% networks_slice.each do |network| %>
-                <%= link_to network_path(network), class:"text-decoration-none" do %>
-                  <div class="card my-2 shadow" style="border-radius: 15px;">
-                    <div class="card-body d-flex flex-column justify-content-left align-items-left">
-                      <h3 class="card-title"><%= network.location %><%= network.description %></h3>
-                      <a href="<%= network_path(network) %>" class="btn btn-alert rounded-pill" style="background-color: red;"> View:</p></a>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<h1>Networks</h1>
+
+<ul>
+  <% @networks.each do |network| %>
+    <li>
+      <h2><%= network.name %> Network</h2>
+      <ul>
+        <% network.users.farmer.each do |farmer| %>
+          <li><%= farmer.name %></li>
+          <!-- Add more farmer details as needed -->
+        <% end %>
+      </ul>
+      <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
+    </li>
+  <% end %>
+</ul>
