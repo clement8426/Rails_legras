@@ -3,9 +3,8 @@
 <h2>Farmers in this Network:</h2>
 
 <ul>
-  <% @farmers.each do |farmer| %>
+  <% @network_farmers.each do |farmer| %>
     <li><%= farmer.name %></li>
-    <li><%= farmer.description %></li>
   <% end %>
 </ul>
 

@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+p "creating network table..."
 network1 = Network.create(
   name: "Coopérative des Terroirs de France",
   location: "12 Rue de la Monnaie, 35000 Rennes",
@@ -42,6 +43,8 @@ network5 = Network.create(
   minimum_shipping_amount: "130",
   description: "Coopérative d'agriculteurs passionnés, nous proposons une variété de produits locaux et saisonniers. Livraison les mardis et vendredis, priorité aux commandes éco-responsables."
 )
+
+p "creating user table..."
 
 User.create(
   name: "MariedeRennes",
@@ -95,7 +98,7 @@ User.create(
 )
 
 User.create(
-  name: "SophieLeroy",
+  name: "SophieLareine",
   type: "farmer",
   location: "12 rue des Bahutiers, 33000 Bordeaux",
   email: "sophieleroy@example.com",
@@ -217,6 +220,8 @@ User.create(
   network_id: network5.id
 )
 
+p "creating ingredients table..."
+
 Ingredient.create(name: "Poulet fermier", price: "8.5", category: "Viandes et volailles")
 Ingredient.create(name: "Dinde bio", price: "10", category: "Viandes et volailles")
 Ingredient.create(name: "Canard confit", price: "12.5", category: "Viandes et volailles")
@@ -317,11 +322,16 @@ Ingredient.create(name: "Menthe poivrée", price: "2.7", category: "Epices et ar
 Ingredient.create(name: "Origan", price: "2.0", category: "Epices et aromates")
 
 
-# User.create(
-#   name: "JeanMartin",
-#   type: "client",
-#   location: "12 boulvard du Temple, 75003 Paris",
-#   email: "jeanmartin@example.com",
-#   password: "securepassword123",
-# )
+p "creating user_ingredients table..."
+User.find_each do |user|
+  ingredient_ids = Ingredient.pluck(:id).sample(3)
+
+  ingredient_ids.each do |ingredient_id|
+    UserIngredient.create(
+      user_id: user.id,
+      ingredient_id: ingredient_id
+    )
+  end
+end
+
 p "cooooollllll"
