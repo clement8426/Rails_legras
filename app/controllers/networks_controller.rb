@@ -6,6 +6,7 @@ class NetworksController < ApplicationController
 
   def show
     @network = Network.find(params[:id])
+    @farmers = User.where(type: 'farmer')
   end
 
 end
