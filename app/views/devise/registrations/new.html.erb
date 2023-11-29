@@ -15,6 +15,18 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :type,
+                collection: ['client', 'farmer'],
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name,
+                required: true %>
+    <%= f.input :location,
+                required: true %>
+    <%= f.input :description,
+                required: true %>
+    <%= f.association :network,
+                  required: true %>
   </div>
 
   <div class="form-actions">
