@@ -1,29 +1,23 @@
-<div
-    class=“bg-image”
-    style="
-      background-image: url(<%= asset_path("carreaux.png") %>);
-      height: 100vh";
-
-  >
-  <div class="container">
-    <div class="logo", style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-      <%= image_tag "logo.png", width: 500, style: "display: block;", class: "logo-hover-home"%>
+<%= link_to home_path, class: "home_link" do %>
+  <div class=“bg-image” style="
+        background-image: url(<%= asset_path("carreaux.png") %>);
+        height: 100vh";>
+    <div class="container">
+      <div class="logo", style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <%= image_tag "logo.png", width: 500, style: "display: block;", class: "logo-hover-home"%>
+      </div>
+      <div class="cocotte", style="position: absolute; top: 0; right: 0; padding: 20px;">
+        <%= image_tag "cocotte.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
+      </div>
+      <div class="cocotte-bottom-left", style="position: absolute; bottom: 0; left: 0; padding: 20px;">
+        <%= image_tag "cocotte.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
+      </div>
+      <div class="cornichon", style="position: absolute; bottom: 0; left: 0; padding: 20px;">
+        <%= image_tag "cornichon.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
+      </div>
+      <div class="rosette", style="position: absolute; bottom: 0; right: 0; padding: 20px;">
+        <%= image_tag "rosette.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
+      </div>
     </div>
- <div class="cocotte", style="position: absolute; top: 0; right: 0; padding: 20px;">
-  <%= image_tag "cocotte.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
-</div>
-<div class="cocotte-bottom-left", style="position: absolute; bottom: 0; left: 0; padding: 20px;">
-  <%= image_tag "cocotte.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
-</div>
-
- <div class="cornichon", style="position: absolute; bottom: 0; left: 0; padding: 20px;">
-  <%= image_tag "cornichon.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
-</div>
-
-<div class="rosette", style="position: absolute; bottom: 0; right: 0; padding: 20px;">
-  <%= image_tag "rosette.png", width: 300, style: "display: block;", class: "logo-hover-home"%>
-</div>
-
-
   </div>
-  </div>
+<% end %>
