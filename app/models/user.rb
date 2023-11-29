@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   self.inheritance_column = nil
-  has_many :carts
+  belongs_to :cart
   has_many :user_ingredients
   has_many :ingredients, through: :user_ingredients
   belongs_to :network, optional: true
