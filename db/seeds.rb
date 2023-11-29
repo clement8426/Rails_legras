@@ -218,10 +218,11 @@ User.create(
 )
 
 
-User.create(
-  name: "JeanMartin",
-  type: "client",
-  location: "12 boulvard du Temple, 75003 Paris",
-  email: "jeanmartin@example.com",
-  password: "securepassword123",
-)
+# User.create(
+#   name: "JeanMartin",
+#   type: "client",
+#   location: "12 boulvard du Temple, 75003 Paris",
+#   email: "jeanmartin@example.com",
+#   password: "securepassword123",
+# )
+p "cooooollllll"
