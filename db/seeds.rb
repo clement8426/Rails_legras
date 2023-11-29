@@ -50,7 +50,7 @@ User.create(
   name: "MariedeRennes",
   type: "farmer",
   location: "6 Rue de la Monnaie, 35000 Rennes",
-  email: "mariedupont@example.com",
+  email: "mariedeRennes@example.com",
   password: "passwordMarie01",
   description: "Je cultive des variétés anciennes de légumes, tout en respectant les principes de l'agroécologie.",
   network_id: network1.id
@@ -65,7 +65,6 @@ User.create(
   description: "Producteur de pommes et de poires bio, je suis engagé dans la préservation de la biodiversité.",
   network_id: network1.id
 )
-
 
 User.create(
   name: "LucieBernard",
@@ -101,13 +100,11 @@ User.create(
   name: "SophieLareine",
   type: "farmer",
   location: "12 rue des Bahutiers, 33000 Bordeaux",
-  email: "sophieleroy@example.com",
+  email: "sophielareine@example.com",
   password: "BioLocal47",
   description: "Je cultive des fruits et légumes bio, avec une attention particulière pour les variétés anciennes.",
   network_id: network2.id
 )
-
-
 
 User.create(
   name: "ClaudeVerger",
@@ -143,7 +140,7 @@ User.create(
   name: "ClaireDeschamps",
   type: "farmer",
   location: "14 route de Thônes, 74940 Annecy-le-Vieux",
-  email: "clairedupont@example.com",
+  email: "clairedeschamps@example.com",
   password: "annecyfarm123",
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
   network_id: network3.id
@@ -163,7 +160,7 @@ User.create(
   name: "ClaireDelamot",
   type: "farmer",
   location: "14 route de Thônes, 74940 Annecy-le-Vieux",
-  email: "clairedupont@example.com",
+  email: "clairedelamot@example.com",
   password: "annecyfarm123",
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
   network_id: network4.id
@@ -173,7 +170,7 @@ User.create(
   name: "LaurentRousseau",
   type: "farmer",
   location: "33 avenue des Romains, 74000 Annecy",
-  email: "marcrousseau@example.com",
+  email: "laurentrousseau@example.com",
   password: "bio74ecure",
   description: "Cultivateur de légumes bio tels que la courgette et la tomate, je m'engage pour une agriculture durable près d'Annecy.",
   network_id: network4.id
@@ -188,7 +185,6 @@ User.create(
   description: "Fermière passionnée par l'élevage de volailles et la culture de légumes racines, je propose des produits frais et locaux dans la région de Chambéry.",
   network_id: network4.id
 )
-
 
 User.create(
   name: "JeanneMartin",
@@ -221,7 +217,7 @@ User.create(
 )
 
 p "creating ingredients table..."
-
+p "creating ingredients table 0/90"
 Ingredient.create(name: "Poulet fermier", price: "8.5", category: "Viandes et volailles")
 Ingredient.create(name: "Dinde bio", price: "10", category: "Viandes et volailles")
 Ingredient.create(name: "Canard confit", price: "12.5", category: "Viandes et volailles")
@@ -233,6 +229,7 @@ Ingredient.create(name: "Ailes de poulet épicées", price: "6", category: "Vian
 Ingredient.create(name: "Saucisse de poulet", price: "4.5", category: "Viandes et volailles")
 Ingredient.create(name: "Rôti de dinde", price: "11", category: "Viandes et volailles")
 
+p "creating ingredients table 10/90"
 Ingredient.create(name: "Lait Entier Bio", price: "1.2", category: "Produits laitiers")
 Ingredient.create(name: "Yaourt Nature", price: "0.5", category: "Produits laitiers")
 Ingredient.create(name: "Beurre Doux Artisanal", price: "2.3", category: "Produits laitiers")
@@ -244,6 +241,7 @@ Ingredient.create(name: "Lait demi-écrémé", price: "2.5", category: "Produits
 Ingredient.create(name: "Yaourt BIO", price: "3.0", category: "Produits laitiers")
 Ingredient.create(name: "Beurre salé", price: "1.7", category: "Produits laitiers")
 
+p "creating ingredients table 20/90"
 Ingredient.create(name: "Camembert de Normandie", price: "3.5", category: "Fromages")
 Ingredient.create(name: "Roquefort", price: "4.0", category: "Fromages")
 Ingredient.create(name: "Brie de Meaux", price: "3.8", category: "Fromages")
@@ -254,7 +252,7 @@ Ingredient.create(name: "Chèvre frais", price: "2.9", category: "Fromages")
 Ingredient.create(name: "Saint-Nectaire", price: "4.2", category: "Fromages")
 Ingredient.create(name: "Bleu d'Auvergne", price: "3.6", category: "Fromages")
 Ingredient.create(name: "Cantal", price: "3.9", category: "Fromages")
-
+p "creating ingredients table 30/90"
 Ingredient.create(name: "Tomate", price: "1.5", category: "légumes")
 Ingredient.create(name: "Carotte", price: "1.2", category: "légumes")
 Ingredient.create(name: "Pomme de terre", price: "0.8", category: "légumes")
@@ -265,7 +263,7 @@ Ingredient.create(name: "Poivron rouge", price: "2.1", category: "légumes")
 Ingredient.create(name: "Épinard", price: "1.4", category: "légumes")
 Ingredient.create(name: "Chou frisé", price: "1.8", category: "légumes")
 Ingredient.create(name: "Concombre", price: "1.3", category: "légumes")
-
+p "creating ingredients table 40/90"
 Ingredient.create(name: "Pomme", price: "2.0", category: "fruits")
 Ingredient.create(name: "Banane", price: "1.8", category: "fruits")
 Ingredient.create(name: "Orange", price: "2.5", category: "fruits")
@@ -276,7 +274,7 @@ Ingredient.create(name: "Mangue", price: "2.8", category: "fruits")
 Ingredient.create(name: "Raisin", price: "2.6", category: "fruits")
 Ingredient.create(name: "Cerise", price: "4.0", category: "fruits")
 Ingredient.create(name: "Fraise", price: "3.5", category: "fruits")
-
+p "creating ingredients table 50/90"
 Ingredient.create(name: "Blé complet", price: "2.0", category: "Céréales")
 Ingredient.create(name: "Orge perlé", price: "1.8", category: "Céréales")
 Ingredient.create(name: "Quinoa rouge", price: "3.5", category: "Céréales")
@@ -287,7 +285,7 @@ Ingredient.create(name: "Épeautre", price: "2.3", category: "Céréales")
 Ingredient.create(name: "Millet", price: "2.0", category: "Céréales")
 Ingredient.create(name: "Sarrasin", price: "2.5", category: "Céréales")
 Ingredient.create(name: "Riz sauvage", price: "3.0", category: "Céréales")
-
+p "creating ingredients table 60/90"
 Ingredient.create(name: "Vin rouge Côte du Rhône", price: "15", category: "Vin et spiritueux")
 Ingredient.create(name: "Vin blanc Chardonnay", price: "12", category: "Vin et spiritueux")
 Ingredient.create(name: "Vin rosé de Provence", price: "10", category: "Vin et spiritueux")
@@ -298,7 +296,7 @@ Ingredient.create(name: "Champagne brut", price: "50", category: "Vin et spiritu
 Ingredient.create(name: "Pineau des Charentes", price: "20", category: "Vin et spiritueux")
 Ingredient.create(name: "Eau-de-vie de Poire", price: "25", category: "Vin et spiritueux")
 Ingredient.create(name: "Pastis artisanal", price: "18", category: "Vin et spiritueux")
-
+p "creating ingredients table 70/90"
 Ingredient.create(name: "Jus de pomme artisanal", price: "3.0", category: "Boissons non alcoolisées")
 Ingredient.create(name: "Limonade bio au citron", price: "2.5", category: "Boissons non alcoolisées")
 Ingredient.create(name: "Infusion de verveine locale", price: "4.0", category: "Boissons non alcoolisées")
@@ -309,7 +307,7 @@ Ingredient.create(name: "Sirop de lavande bio", price: "5.0", category: "Boisson
 Ingredient.create(name: "Smoothie bio aux fruits rouges", price: "3.7", category: "Boissons non alcoolisées")
 Ingredient.create(name: "Jus de carotte frais pressé", price: "2.5", category: "Boissons non alcoolisées")
 Ingredient.create(name: "Thé glacé bio maison", price: "2.8", category: "Boissons non alcoolisées")
-
+p "creating ingredients table 80/90"
 Ingredient.create(name: "Thym", price: "2.5", category: "Epices et aromates")
 Ingredient.create(name: "Basilic", price: "2.0", category: "Epices et aromates")
 Ingredient.create(name: "Romarin", price: "2.3", category: "Epices et aromates")
@@ -320,7 +318,7 @@ Ingredient.create(name: "Ciboulette", price: "2.2", category: "Epices et aromate
 Ingredient.create(name: "Estragon", price: "3.5", category: "Epices et aromates")
 Ingredient.create(name: "Menthe poivrée", price: "2.7", category: "Epices et aromates")
 Ingredient.create(name: "Origan", price: "2.0", category: "Epices et aromates")
-
+p "creating ingredients table 90/90"
 
 p "creating user_ingredients table..."
 User.find_each do |user|

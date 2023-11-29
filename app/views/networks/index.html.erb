@@ -1,4 +1,31 @@
-<h1>Networks</h1>
+<div class="container">
+  <h1>Networks</h1>
+  <div class="row">
+    <% @networks.each do |network| %>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <h2><%= network.name %> Network</h2>
+          </div>
+          <div class="card-body">
+            <% @network_farmers[network.id].each do |farmer| %>
+              <p><%= farmer.name %> produit des:</p>
+              <ul>
+                <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
+                  <li><%= category %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 <ol class="articles">
   <% @networks.each_with_index do |network, index| %>
@@ -36,3 +63,4 @@
     window.location.href = url;
   }
 </script>
+
