@@ -1,8 +1,8 @@
 
 <div class="container">
-  <h1><%= @network.name %> Network</h1>
+  <h1><%= @network.name %> Coopérative</h1>
 
-  <h2>Farmers in this Network:</h2>
+  <h2>Producteurs dans leurs Coopératives:</h2>
 
   <ul>
     <% @network_farmers.each do |farmer| %>
@@ -29,5 +29,5 @@
     <% end %>
   </div>
 
-  <%= link_to 'Back to Networks result', networks_path %>
+  <%= link_to 'Retour aux résultats', networks_path %>
 </div>

@@ -1,11 +1,11 @@
 <div class="container">
-  <h1>Networks</h1>
+  <h1>Les Coopératives</h1>
   <div class="row">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-header">
-            <h2><%= network.name %> Network</h2>
+            <h2><%= network.name %> Coopérative</h2>
           </div>
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
@@ -18,7 +18,7 @@
             <% end %>
           </div>
           <div class="card-footer">
-            <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
+            <%= link_to 'Voir la Coopérative', network_path(network), class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
@@ -27,6 +27,40 @@
 </div>
 
 
-<%# <%@network_farmers[1].each do |farmer|  %>
-  <%# <%= farmer.ingredients.pluck(:category).uniq %>
-<%# <% end.flatten %>
+<ol class="articles">
+  <% @networks.each_with_index do |network, index| %>
+          <%= link_to network_path(network) do %>
+    <li class="articles__article" style="--animation-order: <%= index + 1 %>;">
+      <div class="articles__link" onclick="animateAndRedirect('<%= network_path(network) %>')">
+        <div class="articles__content articles__content--lhs">
+          <h2 class="articles__title"><%= network.name %> Network</h2>
+          <div class="articles__footer">
+            <!-- Ajoutez ici les informations spécifiques à votre réseau, si nécessaire -->
+          </div>
+        </div>
+
+        <div class="articles__content articles__content--rhs" aria-hidden="true">
+          <h2 class="articles__title"><%= network.name %> Network</h2>
+          <div class="articles__footer">
+            <!-- Ajoutez ici les informations spécifiques à votre réseau, si nécessaire -->
+          </div>
+        </div>
+      </div>
+    </li>
+         <% end %>
+  <% end %>
+</ol>
+
+<script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
+<script>
+  function animateAndRedirect(url) {
+    var card = event.currentTarget; // L'élément cliqué
+    gsap.to(card, { x: 50, opacity: 0, duration: 0.5, onComplete: function () { redirectToNetwork(url); } });
+  }
+
+  function redirectToNetwork(url) {
+    // Redirigez vers le lien View Network
+    window.location.href = url;
+  }
+</script>
+
