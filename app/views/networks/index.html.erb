@@ -1,11 +1,11 @@
 <div class="container">
-  <h1>Networks</h1>
+  <h1>Les Coopératives</h1>
   <div class="row">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-header">
-            <h2><%= network.name %> Network</h2>
+            <h2><%= network.name %> Coopérative</h2>
           </div>
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
@@ -18,7 +18,7 @@
             <% end %>
           </div>
           <div class="card-footer">
-            <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
+            <%= link_to 'Voir la Coopérative', network_path(network), class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
