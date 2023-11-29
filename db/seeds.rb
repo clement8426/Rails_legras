@@ -8,35 +8,35 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Network.create(
+network1 = Network.create(
   name: "Coopérative des Terroirs de France",
   location: "12 Rue de la Monnaie, 35000 Rennes",
   minimum_shipping_amount: "100",
   description: "Nous somme une coopérative de producteurs locaux, nous livrons dans un rayon de 10km autour de Paris. Nous livrons le mardi et le vendredi. Nos produits sont frais et de saison et cultivés dans le respect de l'environnement avec beaucoup d'amour."
 )
 
-Network.create(
+network2 = Network.create(
   name: "Les Jardins Partagés",
   location: "Place de la Bourse, 33000 Bordeauxs",
   minimum_shipping_amount: "120",
   description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables. Livraison les mercredis et samedis dans un rayon de 15km de Paris."
 )
 
-Network.create(
+network3 = Network.create(
   name: "Les Fermes de France",
   location: "Place Stanislas, 54000 Nancy",
   minimum_shipping_amount: "90",
   description: "Petite coopérative familiale, nous fournissons des produits locaux frais. Livraison possible les lundis et jeudis dans Paris intra-muros."
 )
 
-Network.create(
+network4 = Network.create(
   name: "Harmonie Agricole",
   location: "3 Passage de l'Île, 74000 Annecy",
   minimum_shipping_amount: "110",
   description: "Nous sommes spécialisés dans les fruits et légumes bio, livrés frais à votre porte. Livraisons disponibles le mercredi et le samedi dans et autour de Paris."
 )
 
-Network.create(
+network5 = Network.create(
   name: "Nature et Progrès",
   location: "5 Avenue Anatole France, 75007 Paris",
   minimum_shipping_amount: "130",
@@ -50,7 +50,7 @@ User.create(
   email: "mariedupont@example.com",
   password: "passwordMarie01",
   description: "Je cultive des variétés anciennes de légumes, tout en respectant les principes de l'agroécologie.",
-  network_id: 1
+  network_id: network1.id
 )
 
 User.create(
@@ -60,7 +60,7 @@ User.create(
   email: "pierreleroux@example.com",
   password: "pierreSecure02",
   description: "Producteur de pommes et de poires bio, je suis engagé dans la préservation de la biodiversité.",
-  network_id: 1
+  network_id: network1.id
 )
 
 
@@ -71,7 +71,7 @@ User.create(
   email: "luciebernard@example.com",
   password: "luciePass03",
   description: "Éleveuse de volailles en plein air, je m'assure du bien-être animal et de la qualité de mes produits.",
-  network_id: 1
+  network_id: network1.id
 )
 
 User.create(
@@ -81,7 +81,7 @@ User.create(
   email: "mariedupont@example.com",
   password: "Bordeaux123",
   description: "Spécialisée dans la viticulture, je produis des vins biologiques de la région bordelaise.",
-  network_id: 2
+  network_id: network2.id
 )
 
 User.create(
@@ -91,7 +91,7 @@ User.create(
   email: "paulbernard@example.com",
   password: "Vignoble33",
   description: "Producteur de fromages de chèvre, je m'engage pour une agriculture durable et locale.",
-  network_id: 2
+  network_id: network2.id
 )
 
 User.create(
@@ -101,7 +101,7 @@ User.create(
   email: "sophieleroy@example.com",
   password: "BioLocal47",
   description: "Je cultive des fruits et légumes bio, avec une attention particulière pour les variétés anciennes.",
-  network_id: 2
+  network_id: network2.id
 )
 
 
@@ -113,7 +113,7 @@ User.create(
   email: "claudeverger@example.com",
   password: "passwordVerger54",
   description: "Producteur de fruits et légumes biologiques, spécialisé dans les vergers de pommes et poires.",
-  network_id: 3
+  network_id: network2.id
 )
 
 User.create(
@@ -123,7 +123,7 @@ User.create(
   email: "marielavande@example.com",
   password: "lavandePass77",
   description: "Cultivatrice de plantes aromatiques et médicinales, avec une passion pour la lavande et le thym.",
-  network_id: 3
+  network_id: network3.id
 )
 
 User.create(
@@ -133,7 +133,7 @@ User.create(
   email: "alainfermier@example.com",
   password: "fermierAlain88",
   description: "Éleveur et producteur laitier, engagé dans l'agriculture durable et le bien-être animal.",
-  network_id: 3
+  network_id: network3.id
 )
 
 User.create(
@@ -143,7 +143,7 @@ User.create(
   email: "clairedupont@example.com",
   password: "annecyfarm123",
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
-  network_id: 2
+  network_id: network3.id
 )
 
 User.create(
@@ -153,7 +153,7 @@ User.create(
   email: "marcrousseau@example.com",
   password: "bio74ecure",
   description: "Cultivateur de légumes bio tels que la courgette et la tomate, je m'engage pour une agriculture durable près d'Annecy.",
-  network_id: 3
+  network_id: network3.id
 )
 
 User.create(
@@ -163,7 +163,7 @@ User.create(
   email: "clairedupont@example.com",
   password: "annecyfarm123",
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
-  network_id: 4
+  network_id: network4.id
 )
 
 User.create(
@@ -173,7 +173,7 @@ User.create(
   email: "marcrousseau@example.com",
   password: "bio74ecure",
   description: "Cultivateur de légumes bio tels que la courgette et la tomate, je m'engage pour une agriculture durable près d'Annecy.",
-  network_id: 4
+  network_id: network4.id
 )
 
 User.create(
@@ -183,7 +183,7 @@ User.create(
   email: "sophiebernard@example.com",
   password: "chamberyveg234",
   description: "Fermière passionnée par l'élevage de volailles et la culture de légumes racines, je propose des produits frais et locaux dans la région de Chambéry.",
-  network_id: 4
+  network_id: network4.id
 )
 
 
@@ -194,7 +194,7 @@ User.create(
   email: "clairedupont@example.com",
   password: "passwordClaire78",
   description: "Je cultive des herbes aromatiques et des petits fruits en agriculture biologique, tout près de Paris.",
-  network_id: 5
+  network_id: network5.id
 )
 
 User.create(
@@ -204,7 +204,7 @@ User.create(
   email: "marcbernard@example.com",
   password: "marcBio123",
   description: "Passionné par l'agriculture durable, je produis principalement des légumes racines et des salades.",
-  network_id: 5
+  network_id: network5.id
 )
 
 User.create(
@@ -214,7 +214,7 @@ User.create(
   email: "sophieleroy@example.com",
   password: "sophieSecure456",
   description: "Spécialiste des fruits bio, je propose des pommes, poires, et cerises cultivées avec amour.",
-  network_id: 5
+  network_id: network5.id
 )
 
 
