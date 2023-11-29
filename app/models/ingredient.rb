@@ -12,7 +12,7 @@ class Ingredient < ApplicationRecord
   ].freeze
 
   validates :category, inclusion: { in: VALID_CATEGORIES, message: "%<value> n'est pas une catégorie valide" }
+  has_many :recipes_ingredients
+  has_many :recipes, through: :recipes_ingredients
+  validates :category, presence: true
 end
-has_many :recipes_ingredients
-has_many :recipes, through: :recipes_ingredients
-validates :category, presence: true
