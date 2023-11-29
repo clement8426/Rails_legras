@@ -1,15 +1,32 @@
-<h1>Networks</h1>
+<div class="container">
+  <h1>Networks</h1>
+  <div class="row">
+    <% @networks.each do |network| %>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-header">
+            <h2><%= network.name %> Network</h2>
+          </div>
+          <div class="card-body">
+            <% @network_farmers[network.id].each do |farmer| %>
+              <p><%= farmer.name %> produit des:</p>
+              <ul>
+                <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
+                  <li><%= category %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<ul>
-  <% @networks.each do |network| %>
-    <li>
-      <h2><%= network.name %> Network</h2>
-      <ul>
-        <% @network_farmers[network.id].each do |farmer| %>
-          <li><%= farmer.name %></li>
-        <% end %>
-      </ul>
-      <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
-    </li>
-  <% end %>
-</ul>
+
+<%# <%@network_farmers[1].each do |farmer|  %>
+  <%# <%= farmer.ingredients.pluck(:category).uniq %>
+<%# <% end.flatten %>
