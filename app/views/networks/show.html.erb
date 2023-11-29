@@ -19,6 +19,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"><%= ingredient.name %></h5>
+              <p>Price: <%= ingredient.price %></p>
+              <%= link_to 'Add to Cart', carts_items_path(@cart_item),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
+
             </div>
           </div>
         </div>

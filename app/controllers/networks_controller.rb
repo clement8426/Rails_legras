@@ -16,6 +16,7 @@ class NetworksController < ApplicationController
   end
 
   def show
+    @cart_item = CartItem.new
     @network = Network.find(params[:id])
     @network_farmers = User.where(type: 'farmer', network_id: @network.id)
   end
