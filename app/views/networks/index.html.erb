@@ -5,9 +5,8 @@
     <li>
       <h2><%= network.name %> Network</h2>
       <ul>
-        <% network.users.farmer.each do |farmer| %>
+        <% @network_farmers[network.id].each do |farmer| %>
           <li><%= farmer.name %></li>
-          <!-- Add more farmer details as needed -->
         <% end %>
       </ul>
       <%= link_to 'View Network', network_path(network), class: 'btn btn-primary' %>
