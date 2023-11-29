@@ -1,11 +1,34 @@
 <h1><%= @network.name %> </h1>
 
-<h2>Farmers in this Network:</h2>
+<div class="container">
+  <h1><%= @network.name %> Coopérative</h1>
 
-<ul>
-  <% @network_farmers.each do |farmer| %>
-    <li><%= farmer.name %></li>
-  <% end %>
-</ul>
+  <h2>Producteurs dans leurs Coopératives:</h2>
 
-<%= link_to 'Back to Networks result', networks_path %>
+  <ul>
+    <% @network_farmers.each do |farmer| %>
+      <li>
+        <h3><%= farmer.name %></h3>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="row">
+    <% @network_farmers.each do |farmer| %>
+      <% farmer.ingredients.each do |ingredient| %>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= ingredient.name %></h5>
+              <p>Price: <%= ingredient.price %></p>
+              <%= link_to 'Add to Cart', carts_items_path(@cart_item),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= link_to 'Retour aux résultats', networks_path %>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="container">
+<h1> Mes Paniers </h1>
+
+  <ul>
+    <% @carts.each do |cart| %>
+      <li>
+        <p> Cart ID: <%= cart.id %></p>
+        <%= cart.ingredient %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

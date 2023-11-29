@@ -1,0 +1,6 @@
+<%= link_to network_path(network) do %>
+  <h2><%= network.name %></h2>
+  <p><%= network.location %></p>
+  <p><%= network.minimum_shipping_amount %>€</p>
+<% end %>
+<a href="<%= "https://www.google.com/maps/search/?api=1&query=#{network.latitude},#{network.longitude}" %>" target="_blank">Voir sur google maps</a>
