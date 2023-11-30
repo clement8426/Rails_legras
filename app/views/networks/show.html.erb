@@ -1,22 +1,19 @@
-<h1><%= @network.name %> </h1>
-
-<div class="container">
-  <h1><%= @network.name %> Coopérative</h1>
-  <%= cl_image_tag @network.photo.last.key, height: 100, width: 100%>
-
-
-  <h2>Producteurs dans leurs Coopératives:</h2>
-
-  <ul>
+<h1><%= @network.name %></h1>
+<div class="flex-container">
+  <div class="content">
+    <h2>Producteurs dans leurs Coopératives:</h2>
     <% @network_farmers.each do |farmer| %>
-      <li>
-        <h3><%= farmer.name %></h3>
-      <%= cl_image_tag farmer.photo.first.key, height: 100, width: 100%>
-      <%= cl_image_tag farmer.photo.last.key, height: 100, width: 100%>
-
-      </li>
+      <h3><%= farmer.name %></h3>
+      <%= cl_image_tag farmer.photo.first.key, height: 100, width: 100, class: 'rounded-circle' %>
     <% end %>
-  </ul>
+  </div>
+
+  <div class="network-photo">
+    <%= cl_image_tag @network.photo.last.key%>
+  </div>
+</div>
+
+
 
   <div class="row">
     <% @network_farmers.each do |farmer| %>

@@ -5,3 +5,20 @@
   border: 2px solid  rgb(205,56,48);
   text-decoration: none;
   }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between; /* Alignement horizontal */
+  }
+
+  .content, .network-photo {
+    flex: 1; /* Permet à chaque div de prendre un espace égal dans le container */
+  }
+
+  .network-photo {
+    width: auto; /* ou une autre taille fixe si nécessaire */
+    height: auto; /* ou une autre taille fixe si nécessaire */
+    display: flex; /* Pour centrer l'image si elle est plus petite que le conteneur */
+    justify-content: center;
+    align-items: center;
+  }
