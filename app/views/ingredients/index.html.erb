@@ -3,11 +3,12 @@
     <style></style>
   </head>
   <body>
+
     <div class="title py-4">
       <h1> Nos Produits </h1>
     </div>
     <div class="container">
-      <% @ingredients.group_by(&:category).each_slice(3) do |(category1, ingredients1), (category2, ingredients2), (category3, ingredients3)| %>
+      <% @ingredients.group_by(&:category).each_slice(3) do |categories| %>
         <div class="row">
           <div class="col-md-4">
             <div class="card border-red mb-4">
@@ -83,8 +84,4 @@
             </div>
           <% end %>
         </div>
-      <% end %>
-    </div>
-    <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1" %>
-  </body>
-</html>
+        <% end %>
