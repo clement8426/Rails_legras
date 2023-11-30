@@ -9,6 +9,9 @@
     <% @network_farmers.each do |farmer| %>
       <li>
         <h3><%= farmer.name %></h3>
+      <%= cl_image_tag farmer.photo.first.key, height: 100, width: 100%>
+      <%= cl_image_tag farmer.photo.last.key, height: 100, width: 100%>
+
       </li>
     <% end %>
   </ul>
@@ -20,6 +23,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title"><%= ingredient.name %></h5>
+                <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100%>
               <p>Price: <%= ingredient.price %></p>
               <%= link_to 'Add to Cart', carts_items_path(network_id: farmer.network, ingredient_id: ingredient),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
 
