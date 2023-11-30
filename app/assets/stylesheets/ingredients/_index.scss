@@ -1,5 +1,7 @@
 .card-body {
   background-color: white;
+  max-height: 400px;
+  overflow: scroll;
 }
 
 h1 {
