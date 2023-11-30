@@ -514,5 +514,4 @@ User.find_each do |user|
   end
 end
 
-
 p "cooooollllll"
