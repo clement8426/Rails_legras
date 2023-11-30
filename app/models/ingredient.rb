@@ -12,8 +12,8 @@ class Ingredient < ApplicationRecord
   ].freeze
 
   has_many_attached :photo
-  belongs_to :user_ingredient
-  delegate :user, to: :user_ingredient
+  has_many :user_ingredients
+  has_many :users, through: :user_ingredients
   has_many :recipes_ingredients
   has_many :recipes, through: :recipes_ingredients
   validates :category, inclusion: { in: VALID_CATEGORIES, message: "%<value> n'est pas une catégorie valide" }
