@@ -1,10 +1,6 @@
-<h1><%= @network.name %> </h1>
-
 <div class="container">
-  <h1><%= @network.name %> Coopérative</h1>
-
-  <h2>Producteurs dans leurs Coopératives:</h2>
-
+  <h1><%= @network.name %> </h1>
+  <h2>Producteurs:</h2>
   <ul>
     <% @network_farmers.each do |farmer| %>
       <li>
@@ -12,23 +8,18 @@
       </li>
     <% end %>
   </ul>
-
   <div class="row">
-    <% @network_farmers.each do |farmer| %>
-      <% farmer.ingredients.each do |ingredient| %>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= ingredient.name %></h5>
-              <p>Price: <%= ingredient.price %></p>
-              <%= link_to 'Add to Cart', carts_items_path(network_id: farmer.network, ingredient_id: ingredient),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
-
-            </div>
+    <% @network.ingredients.each do |ingredient| %>
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= ingredient.name %></h5>
+            <p>Price: <%= ingredient.price %></p>
+            <%= link_to 'Add to Cart', carts_items_path(network_id: @network, ingredient_id: ingredient),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
-
-  <%= link_to 'Retour aux résultats', networks_path %>
+  <%= link_to 'Retour', networks_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>

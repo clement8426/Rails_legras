@@ -1,20 +1,26 @@
+<!-- app/views/your_view_file.html.erb -->
+
 <div class="container">
-  <h1>Les Coopératives</h1>
+  <h1>Nos Coopératives</h1>
   <div class="row">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-header">
-            <h2><%= network.name %> Coopérative</h2>
+            <h2><%= network.name %></h2>
           </div>
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
-              <p><%= farmer.name %> produit des:</p>
-              <ul>
-                <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
-                  <li><%= category %></li>
-                <% end %>
-              </ul>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3><%= farmer.name %></h3>
+                  <ul>
+                    <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
+                      <li><%= category %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
             <% end %>
           </div>
           <div class="card-footer">
@@ -24,35 +30,10 @@
       </div>
     <% end %>
   </div>
+  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>
 
-
-<ol class="articles">
-  <% @networks.each_with_index do |network, index| %>
-          <%= link_to network_path(network) do %>
-    <li class="articles__article" style="--animation-order: <%= index + 1 %>;">
-      <div class="articles__link" onclick="animateAndRedirect('<%= network_path(network) %>')">
-        <div class="articles__content articles__content--lhs">
-          <h2 class="articles__title"><%= network.name %> Network</h2>
-          <div class="articles__footer">
-            <!-- Ajoutez ici les informations spécifiques à votre réseau, si nécessaire -->
-          </div>
-        </div>
-
-        <div class="articles__content articles__content--rhs" aria-hidden="true">
-          <h2 class="articles__title"><%= network.name %> Network</h2>
-          <div class="articles__footer">
-            <!-- Ajoutez ici les informations spécifiques à votre réseau, si nécessaire -->
-          </div>
-        </div>
-      </div>
-    </li>
-         <% end %>
-  <% end %>
-</ol>
-
-<script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
-<script>
+<%# <script>
   function animateAndRedirect(url) {
     var card = event.currentTarget; // L'élément cliqué
     gsap.to(card, { x: 50, opacity: 0, duration: 0.5, onComplete: function () { redirectToNetwork(url); } });
@@ -62,5 +43,4 @@
     // Redirigez vers le lien View Network
     window.location.href = url;
   }
-</script>
-
+</script> %>

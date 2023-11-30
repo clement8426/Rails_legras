@@ -1,4 +1,7 @@
 class Network < ApplicationRecord
+  has_many :users # farmers
+  has_many :ingredients, -> { distinct }, through: :users
+
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
