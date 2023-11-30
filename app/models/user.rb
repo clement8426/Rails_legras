@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :ingredients, through: :user_ingredients
   has_many :carts
   belongs_to :network, optional: true
+  has_many_attached :photo
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

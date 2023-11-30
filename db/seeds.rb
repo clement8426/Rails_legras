@@ -7,7 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 require "open-uri"
 
 UserIngredient.destroy_all
@@ -23,6 +22,8 @@ network1 = Network.create!(
   minimum_shipping_amount: "100",
   description: "Nous somme une coopérative de producteurs locaux, nous livrons dans un rayon de 10km autour de Paris. Nous livrons le mardi et le vendredi. Nos produits sont frais et de saison et cultivés dans le respect de l'environnement avec beaucoup d'amour."
 )
+network1.photo.attach(io: File.open("app/assets/images/networks/farm (1).jpg"), filename: 'coop_terroirs.jpg', content_type: 'image/jpg')
+network1.save
 
 network2 = Network.create!(
   name: "Les Jardins Partagés",
@@ -30,6 +31,9 @@ network2 = Network.create!(
   minimum_shipping_amount: "120",
   description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables. Livraison les mercredis et samedis dans un rayon de 15km de Paris."
 )
+network2.photo.attach(io: File.open("app/assets/images/networks/farm (2).jpg"), filename: 'jardins_partages.jpg', content_type: 'image/jpg')
+network2.save
+
 
 network3 = Network.create!(
   name: "Les Fermes de France",
@@ -37,6 +41,9 @@ network3 = Network.create!(
   minimum_shipping_amount: "90",
   description: "Petite coopérative familiale, nous fournissons des produits locaux frais. Livraison possible les lundis et jeudis dans Paris intra-muros."
 )
+network3.photo.attach(io: File.open("app/assets/images/networks/farm (3).jpg"), filename: 'fermes_france.jpg', content_type: 'image/jpg')
+network3.save
+
 
 network4 = Network.create!(
   name: "Harmonie Agricole",
@@ -44,6 +51,8 @@ network4 = Network.create!(
   minimum_shipping_amount: "110",
   description: "Nous sommes spécialisés dans les fruits et légumes bio, livrés frais à votre porte. Livraisons disponibles le mercredi et le samedi dans et autour de Paris."
 )
+network4.photo.attach(io: File.open("app/assets/images/networks/farm (4).jpg"), filename: 'harmonie_agricole.jpg', content_type: 'image/jpg')
+network4.save
 
 network5 = Network.create!(
   name: "Nature et Progrès",
@@ -51,10 +60,12 @@ network5 = Network.create!(
   minimum_shipping_amount: "130",
   description: "Coopérative d'agriculteurs passionnés, nous proposons une variété de produits locaux et saisonniers. Livraison les mardis et vendredis, priorité aux commandes éco-responsables."
 )
+network5.photo.attach(io: File.open("app/assets/images/networks/farm (5).jpg"), filename: 'nature_progres.jpg', content_type: 'image/jpg')
+network5.save
 
 p "creating user table..."
 
-User.create!(
+user1 = User.create!(
   name: "Marie deRennes",
   type: "farmer",
   location: "6 Rue de la Monnaie, 35000 Rennes",
@@ -63,8 +74,11 @@ User.create!(
   description: "Je cultive des variétés anciennes de légumes, tout en respectant les principes de l'agroécologie.",
   network_id: network1.id
 )
+user1.photo.attach(io: File.open("app/assets/images/farmers/farmer (1).jpg"), filename: 'marie_de_rennes.jpg', content_type: 'image/jpg')
+user1.photo.attach(io: File.open("app/assets/images/farmers/farmer (2).jpg"), filename: 'marie_de_rennes2.jpg', content_type: 'image/jpg')
+user1.save
 
-User.create!(
+user2 = User.create!(
   name: "Pierre Leroux",
   type: "farmer",
   location: "18 Rue de Dinan, 35400 Saint-Malo",
@@ -73,8 +87,11 @@ User.create!(
   description: "Producteur de pommes et de poires bio, je suis engagé dans la préservation de la biodiversité.",
   network_id: network1.id
 )
+user2.photo.attach(io: File.open("app/assets/images/farmers/farmer (3).jpg"), filename: 'pierre_leroux.jpg', content_type: 'image/jpg')
+user2.photo.attach(io: File.open("app/assets/images/farmers/farmer (4).jpg"), filename: 'pierre_leroux2.jpg', content_type: 'image/jpg')
+user2.save
 
-User.create!(
+user3 = User.create!(
   name: "Lucie Bernard",
   type: "farmer",
   location: "2 Avenue des Pays-Bas, 35200 Rennes",
@@ -83,8 +100,11 @@ User.create!(
   description: "Éleveuse de volailles en plein air, je m'assure du bien-être animal et de la qualité de mes produits.",
   network_id: network1.id
 )
+user3.photo.attach(io: File.open("app/assets/images/farmers/farmer (5).jpg"), filename: 'lucie_bernard.jpg', content_type: 'image/jpg')
+user3.photo.attach(io: File.open("app/assets/images/farmers/farmer (6).jpg"), filename: 'lucie_bernard2.jpg', content_type: 'image/jpg')
+user3.save
 
-User.create!(
+user4 = User.create!(
   name: "Marie Dupont",
   type: "farmer",
   location: "15 rue Sainte-Catherine, 33000 Bordeaux",
@@ -93,8 +113,11 @@ User.create!(
   description: "Spécialisée dans la viticulture, je produis des vins biologiques de la région bordelaise.",
   network_id: network2.id
 )
+user4.photo.attach(io: File.open("app/assets/images/farmers/farmer (7).jpg"), filename: 'marie_dupont.jpg', content_type: 'image/jpg')
+user4.photo.attach(io: File.open("app/assets/images/farmers/farmer (8).jpg"), filename: 'marie_dupont2.jpg', content_type: 'image/jpg')
+user4.save
 
-User.create!(
+user5 = User.create!(
   name: "Paul Bernard",
   type: "farmer",
   location: "18 avenue Thiers, 33100 Bordeaux",
@@ -103,8 +126,11 @@ User.create!(
   description: "Producteur de fromages de chèvre, je m'engage pour une agriculture durable et locale.",
   network_id: network2.id
 )
+user5.photo.attach(io: File.open("app/assets/images/farmers/farmer (9).jpg"), filename: 'paul_bernard.jpg', content_type: 'image/jpg')
+user5.photo.attach(io: File.open("app/assets/images/farmers/farmer (10).jpg"), filename: 'paul_bernard2.jpg', content_type: 'image/jpg')
+user5.save
 
-User.create!(
+user6 = User.create!(
   name: "Sophie Lareine",
   type: "farmer",
   location: "12 rue des Bahutiers, 33000 Bordeaux",
@@ -113,8 +139,11 @@ User.create!(
   description: "Je cultive des fruits et légumes bio, avec une attention particulière pour les variétés anciennes.",
   network_id: network2.id
 )
+user6.photo.attach(io: File.open("app/assets/images/farmers/farmer (11).jpg"), filename: 'sophie_lareine.jpg', content_type: 'image/jpg')
+user6.photo.attach(io: File.open("app/assets/images/farmers/farmer (12).jpg"), filename: 'sophie_lareine2.jpg', content_type: 'image/jpg')
+user6.save
 
-User.create!(
+user7 = User.create!(
   name: "Claude Verger",
   type: "farmer",
   location: "10 Rue Stanislas, 54000 Nancy",
@@ -123,8 +152,11 @@ User.create!(
   description: "Producteur de fruits et légumes biologiques, spécialisé dans les vergers de pommes et poires.",
   network_id: network2.id
 )
+user7.photo.attach(io: File.open("app/assets/images/farmers/farmer (13).jpg"), filename: 'claude_verger.jpg', content_type: 'image/jpg')
+user7.photo.attach(io: File.open("app/assets/images/farmers/farmer (14).jpg"), filename: 'claude_verger2.jpg', content_type: 'image/jpg')
+user7.save
 
-User.create!(
+user8 = User.create!(
   name: "Marie Lavande",
   type: "farmer",
   location: "6 Place Duroc, 54700 Pont-à-Mousson",
@@ -133,8 +165,11 @@ User.create!(
   description: "Cultivatrice de plantes aromatiques et médicinales, avec une passion pour la lavande et le thym.",
   network_id: network3.id
 )
+user8.photo.attach(io: File.open("app/assets/images/farmers/farmer (15).jpg"), filename: 'marie_lavande.jpg', content_type: 'image/jpg')
+user8.photo.attach(io: File.open("app/assets/images/farmers/farmer (16).jpg"), filename: 'marie_lavande2.jpg', content_type: 'image/jpg')
+user8.save
 
-User.create!(
+user9 = User.create!(
   name: "Alain Fermier",
   type: "farmer",
   location: "3 Rue Gambetta, 88100 Saint-Dié-des-Vosges",
@@ -143,8 +178,11 @@ User.create!(
   description: "Éleveur et producteur laitier, engagé dans l'agriculture durable et le bien-être animal.",
   network_id: network3.id
 )
+user9.photo.attach(io: File.open("app/assets/images/farmers/farmer (17).jpg"), filename: 'alain_fermier.jpg', content_type: 'image/jpg')
+user9.photo.attach(io: File.open("app/assets/images/farmers/farmer (18).jpg"), filename: 'alain_fermier2.jpg', content_type: 'image/jpg')
+user9.save
 
-User.create!(
+user10 = User.create!(
   name: "Claire Deschamps",
   type: "farmer",
   location: "14 route de Thônes, 74940 Annecy-le-Vieux",
@@ -153,8 +191,11 @@ User.create!(
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
   network_id: network3.id
 )
+user10.photo.attach(io: File.open("app/assets/images/farmers/farmer (19).jpg"), filename: 'claire_deschamps.jpg', content_type: 'image/jpg')
+user10.photo.attach(io: File.open("app/assets/images/farmers/farmer (20).jpg"), filename: 'claire_deschamps2.jpg', content_type: 'image/jpg')
+user10.save
 
-User.create!(
+user11 = User.create!(
   name: "Marc Rousseau",
   type: "farmer",
   location: "33 avenue des Romains, 74000 Annecy",
@@ -163,8 +204,11 @@ User.create!(
   description: "Cultivateur de légumes bio tels que la courgette et la tomate, je m'engage pour une agriculture durable près d'Annecy.",
   network_id: network3.id
 )
+user11.photo.attach(io: File.open("app/assets/images/farmers/farmer (21).jpg"), filename: 'marc_rousseau.jpg', content_type: 'image/jpg')
+user11.photo.attach(io: File.open("app/assets/images/farmers/farmer (22).jpg"), filename: 'marc_rousseau2.jpg', content_type: 'image/jpg')
+user11.save
 
-User.create!(
+user12 = User.create!(
   name: "Claire Delamot",
   type: "farmer",
   location: "14 route de Thônes, 74940 Annecy-le-Vieux",
@@ -173,8 +217,11 @@ User.create!(
   description: "Je suis une fermière spécialisée dans la culture biologique des fraises et des cerises, produites avec passion dans la région d'Annecy.",
   network_id: network4.id
 )
+user12.photo.attach(io: File.open("app/assets/images/farmers/farmer (23).jpg"), filename: 'claire_delamot.jpg', content_type: 'image/jpg')
+user12.photo.attach(io: File.open("app/assets/images/farmers/farmer (24).jpg"), filename: 'claire_delamot2.jpg', content_type: 'image/jpg')
+user12.save
 
-User.create!(
+user13 = User.create!(
   name: "Laurent Rousseau",
   type: "farmer",
   location: "33 avenue des Romains, 74000 Annecy",
@@ -183,8 +230,11 @@ User.create!(
   description: "Cultivateur de légumes bio tels que la courgette et la tomate, je m'engage pour une agriculture durable près d'Annecy.",
   network_id: network4.id
 )
+user13.photo.attach(io: File.open("app/assets/images/farmers/farmer (25).jpg"), filename: 'laurent_rousseau.jpg', content_type: 'image/jpg')
+user13.photo.attach(io: File.open("app/assets/images/farmers/farmer (26).jpg"), filename: 'laurent_rousseau2.jpg', content_type: 'image/jpg')
+user13.save
 
-User.create!(
+user14 = User.create!(
   name: "Sophie Marc",
   type: "farmer",
   location: "9 place de l'Hôtel de Ville, 73000 Chambéry",
@@ -193,8 +243,11 @@ User.create!(
   description: "Fermière passionnée par l'élevage de volailles et la culture de légumes racines, je propose des produits frais et locaux dans la région de Chambéry.",
   network_id: network4.id
 )
+user14.photo.attach(io: File.open("app/assets/images/farmers/farmer (27).jpg"), filename: 'sophie_marc.jpg', content_type: 'image/jpg')
+user14.photo.attach(io: File.open("app/assets/images/farmers/farmer (28).jpg"), filename: 'sophie_marc2.jpg', content_type: 'image/jpg')
+user14.save
 
-User.create!(
+user15 = User.create!(
   name: "Jeanne Martin",
   type: "farmer",
   location: "18 rue Saint-Martin, 75004 Paris",
@@ -203,8 +256,11 @@ User.create!(
   description: "Je cultive des herbes aromatiques et des petits fruits en agriculture biologique, tout près de Paris.",
   network_id: network5.id
 )
+user15.photo.attach(io: File.open("app/assets/images/farmers/farmer (29).jpg"), filename: 'jeanne_martin.jpg', content_type: 'image/jpg')
+user15.photo.attach(io: File.open("app/assets/images/farmers/farmer (30).jpg"), filename: 'jeanne_martin2.jpg', content_type: 'image/jpg')
+user15.save
 
-User.create!(
+user16 = User.create!(
   name: "Jean-Marie Berland",
   type: "farmer",
   location: "5 avenue de la République, 77340 Pontault-Combault",
@@ -213,8 +269,11 @@ User.create!(
   description: "Passionné par l'agriculture durable, je produis principalement des légumes racines et des salades.",
   network_id: network5.id
 )
+user16.photo.attach(io: File.open("app/assets/images/farmers/farmer (31).jpg"), filename: 'jean_marie_berland.jpg', content_type: 'image/jpg')
+user16.photo.attach(io: File.open("app/assets/images/farmers/farmer (32).jpg"), filename: 'jean_marie_berland2.jpg', content_type: 'image/jpg')
+user16.save
 
-User.create!(
+user17 = User.create!(
   name: "Sophie Leroy",
   type: "farmer",
   location: "32 boulevard Victor Hugo, 78300 Poissy",
@@ -223,6 +282,9 @@ User.create!(
   description: "Spécialiste des fruits bio, je propose des pommes, poires, et cerises cultivées avec amour.",
   network_id: network5.id
 )
+user17.photo.attach(io: File.open("app/assets/images/farmers/farmer (33).jpg"), filename: 'sophie_leroy.jpg', content_type: 'image/jpg')
+user17.photo.attach(io: File.open("app/assets/images/farmers/farmer (34).jpg"), filename: 'sophie_leroy2.jpg', content_type: 'image/jpg')
+user17.save
 
 p "creating ingredients table..."
 p "creating ingredients table 0/90"

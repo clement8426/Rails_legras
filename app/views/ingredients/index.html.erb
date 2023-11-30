@@ -1,10 +1,12 @@
 <html lang="en">
   <head>
-    <style>
-    </style>
+    <style></style>
   </head>
   <body>
-    <h1> Nos Produitsssss </h1>
+
+    <div class="title py-4">
+      <h1> Nos Produits </h1>
+    </div>
     <div class="container">
       <% @ingredients.group_by(&:category).each_slice(3) do |categories| %>
         <div class="row">
