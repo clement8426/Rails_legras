@@ -1,8 +1,7 @@
-<!-- app/views/your_view_file.html.erb -->
 
 <div class="container">
   <h1>Nos Coopératives</h1>
-  <div class="row">
+  <div class="row py-4">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card">
@@ -12,7 +11,7 @@
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
               <div class="card mb-3">
-                <div class="card-body">
+                <div class="card-container">
                   <h3><%= farmer.name %></h3>
                   <ul>
                     <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
