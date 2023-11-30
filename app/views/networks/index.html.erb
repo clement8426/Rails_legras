@@ -1,18 +1,19 @@
-
 <div class="container">
-  <h1>Nos Coopératives</h1>
+  <div class="title pt-4">
+    <h1>Nos Coopératives</h1>
+  </div>
   <div class="row py-4">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
-        <div class="card">
+        <div class="card border-card-red">
           <div class="card-header">
             <h2><%= network.name %></h2>
           </div>
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
               <div class="card mb-3">
-                <div class="card-container">
-                  <h3><%= farmer.name %></h3>
+                <div class="card-container pt-3">
+                  <h3 class="farmer-name pb-2"><%= farmer.name %></h3>
                   <ul>
                     <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
                       <li><%= category %></li>
@@ -31,7 +32,6 @@
   </div>
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>
-
 <%# <script>
   function animateAndRedirect(url) {
     var card = event.currentTarget; // L'élément cliqué

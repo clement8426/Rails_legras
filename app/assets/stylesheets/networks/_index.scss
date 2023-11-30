@@ -1,6 +1,7 @@
 @import "show";
 
 h1 {
+color:rgb(205,56,48);
 font-size: 30px;
 }
 
@@ -12,4 +13,39 @@ h3 {
   font-size: 15px;
 }
 
+.card{
+  border-radius: 30px;
+}
 
+.border-card-red {
+  border: 2px solid  rgb(205,56,48);
+}
+
+.title{
+  text-align: center;
+}
+
+.card-header {
+  border-top-left-radius: 28px !important;
+  border-top-right-radius: 28px !important;
+  background-color: rgb(245, 195,207);
+  color: rgb(205,56,48);
+}
+
+.farmer-name {
+text-align: center;
+}
+
+.card-footer{
+  border-bottom-left-radius: 29px !important;
+  border-bottom-right-radius: 29px !important;
+}
+
+.btn-primary{
+  background-color: rgb(245, 195,207);
+  color: rgb(205,56,48);
+  font-weight: 800;
+  border-radius: 30px;
+  border: 2px solid  rgb(205,56,48);
+  text-decoration: none;
+  }
