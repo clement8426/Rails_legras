@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   self.inheritance_column = nil
-  belongs_to :cart
   has_many :user_ingredients
   has_many :ingredients, through: :user_ingredients
+  has_many :carts
   belongs_to :network, optional: true
 
   # Include default devise modules. Others available are:

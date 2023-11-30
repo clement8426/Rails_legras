@@ -2,8 +2,10 @@ class CartsItemsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    cart = current_user.cart
     ingredient = Ingredient.find(params[:ingredient_id])
+    farmer_network = ingredient.user
+    raise
+    cart = current_user.carts.find()
     cart.add_item(ingredient)
   end
 
