@@ -15,7 +15,7 @@
       </li>
     <% end %>
   </ul>
-
+  
   <div class="row">
     <% @network_farmers.each do |farmer| %>
       <% farmer.ingredients.each do |ingredient| %>
@@ -27,12 +27,13 @@
               <p>Price: <%= ingredient.price %></p>
               <%= link_to 'Add to Cart', carts_items_path(network_id: farmer.network, ingredient_id: ingredient),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
 
-            </div>
+            <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), html: { class: 'simple-form' } do |f| %>
+              <%= f.input :quantity, as: :numeric, input_html: { value: 1, min: 1, class: 'form-control' }, label: 'Quantity:' %>
+              <%= f.submit 'Add to Cart', class: 'btn btn-primary mt-2' %>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
-  </div>
-
-  <%= link_to 'Retour aux résultats', networks_path %>
+  <% end %>
 </div>

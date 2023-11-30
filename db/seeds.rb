@@ -9,6 +9,12 @@
 #   end
 require "open-uri"
 
+UserIngredient.destroy_all
+User.destroy_all
+Ingredient.destroy_all
+Network.destroy_all
+
+
 p "creating network table..."
 network1 = Network.create!(
   name: "Coopérative des Terroirs de France",
