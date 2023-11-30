@@ -8,6 +8,7 @@
         <div class="card border-card-red">
           <div class="card-header">
             <h2><%= network.name %></h2>
+              <%= cl_image_tag network.photo.last.key, height: 100, width: 100%>
           </div>
           <div class="card-body">
             <% @network_farmers[network.id].each do |farmer| %>
