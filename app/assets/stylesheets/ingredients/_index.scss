@@ -1,5 +1,7 @@
 .card-body {
   background-color: white;
+  border-bottom-left-radius: 28px ;
+  border-bottom-right-radius: 28px ;
 }
 
 h1 {
@@ -16,7 +18,21 @@ h1 {
     font-size: 15px;
   }
 
-  .card-header{
+  .card-top{
     background-color: rgb(245, 195,207);
     color: rgb(205,56,48);
+    border-top-left-radius: 28px !important;
+    border-top-right-radius: 28px !important;
+  }
+
+  .card-title {
+    text-align: center;
+  }
+
+  .card {
+    justify-content: space-between;
+  }
+
+  .border-red {
+    border: 2px solid  rgb(205,56,48);
   }

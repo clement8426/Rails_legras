@@ -6,11 +6,10 @@
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card border-card-red">
-          <div class="card-header">
+          <div class="card-header" style="background-image: url('<%= cl_image_path(network.photo.last.key, height: 100, width: 100) %>'); background-size: cover;">
             <h2><%= network.name %></h2>
-              <%= cl_image_tag network.photo.last.key, height: 100, width: 100%>
           </div>
-          <div class="card-body">
+          <div class="card-body border-square">
             <% @network_farmers[network.id].each do |farmer| %>
               <div class="card mb-3">
                 <div class="card-container pt-3">
