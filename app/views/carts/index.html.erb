@@ -1,14 +1,49 @@
-
 <div class="container">
-<h1> Mes Paniers </h1>
+  <h1>Mes Paniers</h1>
 
-  <ul>
-    <% @carts.each do |cart| %>
-      <li>
-        <p> Cart ID: <%= cart.id %></p>
-        <%= cart.ingredient %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="card">
+    <div class="card-body">
+      <% @carts.each do |cart| %>
+        <h5 class="card-title">Cart ID: <%= cart.id %></h5>
+        <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
+          <% cart.cart_items.each do |cart_item| %>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <%= cart_item.quantity %> <%= cart_item.ingredient.name %>
+                </div>
+                <div class="col-md-4 text-right">
+                  <%= number_to_currency(cart_item.ingredient.price, unit: "€", format: "%n %u") %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+        <div class="progress" style="height: 20px; margin-top: 10px;">
+          <div class="progress-bar" role="progressbar" id="cart<%= cart.id %>-progress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <p class="mt-2">Montant minimum de livraison : <%= number_to_currency(cart.network.minimum_shipping_amount.to_f, unit: "€", format: "%n %u") %></p>
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var cartItems = document.getElementById("cart<%= cart.id %>-items").querySelectorAll(".list-group-item");
+            var progress = document.getElementById("cart<%= cart.id %>-progress");
 
+            // Calculate the sum of ingredient prices in the cart
+            var sum = Array.from(cartItems).reduce(function(acc, listItem) {
+              var priceText = listItem.querySelector(".col-md-4").textContent.trim();
+              var price = parseFloat(priceText.replace("€", "").replace(",", ""));
+              return acc + price;
+            }, 0);
+
+            // Get the minimum shipping amount for the network
+            var minShippingAmount = <%= cart.network.minimum_shipping_amount.to_f %>;
+
+            // Update the progress bar width based on the sum and minimum shipping amount
+            var progressWidth = (sum / minShippingAmount) * 100;
+            progress.style.width = progressWidth + "%";
+          });
+        </script>
+      <% end %>
+    </div>
+  </div>
 </div>
