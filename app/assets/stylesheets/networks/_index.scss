@@ -7,6 +7,7 @@ font-size: 30px;
 
 h2{
   font-size: 20px;
+  color: rgb(205,56,48);
 }
 
 h3 {
@@ -29,8 +30,7 @@ h3 {
 .card-header {
   border-top-left-radius: 28px !important;
   border-top-right-radius: 28px !important;
-  background-color: rgb(245, 195,207);
-  color: rgb(205,56,48);
+  height:250px;
 }
 
 .farmer-name {
@@ -50,3 +50,14 @@ text-align: center;
   border: 2px solid  rgb(205,56,48);
   text-decoration: none;
   }
+
+.img {
+border-radius: 50%;
+}
+
+.border-squared {
+  max-height: 400px;
+  overflow: scroll;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
