@@ -21,6 +21,9 @@
   height: 100px;
   padding: 0px 50px;
   color: rgb(205, 56, 48);
+  bottom: 10px;
+  left: 0; /* Ajoutez cette propriété pour couvrir toute la largeur */
+  width: 100%;
 }
 .footer-links {
   display: flex;
