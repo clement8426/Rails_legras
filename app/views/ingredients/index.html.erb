@@ -1,41 +1,38 @@
 <html lang="en">
-<head>
-  <style>
-
-.card {
- background-color: #black;
-}
-</style>
-
-</head>
-<body>
-
-
-index ingredient
-<div class="container">
-  <div class="row">
-    <% @ingredients.group_by(&:category).each do |category, ingredients| %>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h1 class="card-title"><%= category %></h1>
+  <head>
+    <style>
+      .card {
+       background-color: #black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> Nos Produits </h1>
+    <div class="container">
+      <div class="row">
+        <% @ingredients.group_by(&:category).each do |category, ingredients| %>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <h1 class="card-title"><%= category %></h1>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <% ingredients.each do |ingredient| %>
+                  <div class="mb-2">
+                    <p class="card-text"><%= ingredient.name %></p>
+                    <% if ingredient.photo.attached? %>
+                      <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100%>
+                    <% else %>
+                      <p>Pas de photo disponible</p>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           </div>
-          <div class="card-body d-flex flex-column">
-            <% ingredients.each do |ingredient| %>
-  <div class="mb-2">
-    <p class="card-text"><%= ingredient.name %></p>
-    <% if ingredient.photo.attached? %>
-      <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100%>
-    <% else %>
-      <p>Pas de photo disponible</p>
-    <% end %>
-  </div>
-<% end %>
-          </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
+    <body>
 
-<body>
+  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>

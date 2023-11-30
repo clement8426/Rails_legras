@@ -1,10 +1,6 @@
-<h1><%= @network.name %> </h1>
-
 <div class="container">
-  <h1><%= @network.name %> Coopérative</h1>
-
-  <h2>Producteurs dans leurs Coopératives:</h2>
-
+  <h1><%= @network.name %> </h1>
+  <h2>Producteurs:</h2>
   <ul>
     <% @network_farmers.each do |farmer| %>
       <li>
@@ -12,7 +8,6 @@
       </li>
     <% end %>
   </ul>
-
   <div class="row">
     <% @network_farmers.each do |farmer| %>
       <% farmer.ingredients.each do |ingredient| %>
@@ -32,9 +27,8 @@
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
-
-  <%= link_to 'Retour aux résultats', networks_path %>
+  <%= link_to 'Retour', networks_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>
