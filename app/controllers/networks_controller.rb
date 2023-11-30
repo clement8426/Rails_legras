@@ -3,11 +3,12 @@ class NetworksController < ApplicationController
   def index
     @networks = Network.all
     @network_farmers = {}
+    @networks = Network.near(current_user.location, 100)
 
     if params[:query].present?
-      @networks = Network.search_by_location_and_description(params[:query])
+      @networks = Network.near(params[:query], 100)
     else
-      @networks = Network.all
+      @networks = Network.near(current_user.location, 100)
     end
 
     @networks.each do |network|

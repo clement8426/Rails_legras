@@ -1,11 +1,12 @@
 <div class="container">
   <h1>Mes Paniers</h1>
 
-  <div class="card">
+  <div class="card" data-controller="cart">
     <div class="card-body">
       <% @carts.each do |cart| %>
         <h5 class="card-title">Cart ID: <%= cart.id %></h5>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
+          <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
             <li class="list-group-item">
               <div class="row">
@@ -13,16 +14,19 @@
                   <%= cart_item.quantity %> <%= cart_item.ingredient.name %>
                 </div>
                 <div class="col-md-4 text-right">
-                  <%= number_to_currency(cart_item.ingredient.price, unit: "€", format: "%n %u") %>
+                  <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
+                  <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
+                  <% total_cart_price += item_total_price %>
                 </div>
               </div>
             </li>
           <% end %>
         </ul>
-        <div class="progress" data-controller="cart" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
+        <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
           <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <p class="mt-2">Montant minimum de livraison : <%= number_to_currency(cart.network.minimum_shipping_amount.to_f, unit: "€", format: "%n %u") %></p>
+        <p class="mt-2 ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
+        <p class="mt-2 sum-of-all"><%= total_cart_price.to_f %></p>
       <% end %>
     </div>
   </div>
