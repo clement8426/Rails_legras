@@ -9,6 +9,6 @@ class Network < ApplicationRecord
   pg_search_scope :search_by_location_and_description,
   against: [ :name, :location, :description ],
   using: {
-    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    tsearch: { prefix: true }
   }
 end

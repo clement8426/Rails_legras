@@ -9,8 +9,10 @@ class CartsItemsController < ApplicationController
     @cart_item = CartItem.new
     @cart_item.cart = @cart
     @cart_item.ingredient = @ingredient
+    @cart_item.quantity = cart_item_params[:quantity]
+
     if @cart_item.save
-      raise
+      @cart_item = CartItem.new(@ingredient)
     end
   end
 
@@ -28,14 +30,7 @@ class CartsItemsController < ApplicationController
     @ingredient = Ingredient.find(params[:ingredient_id])
   end
 
-  def add_item(ingredient)
-    existing_item = cart_items.find_by(ingredient: ingredient)
-
-    if existing_item
-      existing_item.increment(:quantity)
-    else
-      cart_item = cart_items.build(ingredient: ingredient, quantity: 1)
-      cart_item.save
-    end
+  def cart_item_params
+    params.require(:cart_item).permit(:quantity)
   end
 end
