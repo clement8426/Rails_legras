@@ -6,13 +6,12 @@ class CartsItemsController < ApplicationController
   def create
     # ingredient = Ingredient.find(params[:ingredient_id])
     # farmer_network = ingredient.user
-    @cart_item = CartItem.new
+    @cart_item = CartItem.new(cart_item_params)
     @cart_item.cart = @cart
     @cart_item.ingredient = @ingredient
-    @cart_item.quantity = cart_item_params[:quantity]
 
     if @cart_item.save
-      @cart_item = CartItem.new(@ingredient)
+      raise
     end
   end
 
