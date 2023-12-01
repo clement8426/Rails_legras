@@ -8,7 +8,7 @@ class NetworksController < ApplicationController
     if params[:query].present?
       @networks = Network.near(params[:query], 100)
     else
-      @networks = Network.near(current_user.location, 100)
+      @networks = Network.all
     end
 
     @networks.each do |network|
