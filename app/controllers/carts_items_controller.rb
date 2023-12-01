@@ -3,9 +3,8 @@ class CartsItemsController < ApplicationController
   before_action :set_cart, :set_ingredient, only: [:create]
   # before_action :set_ingredient, only: [:create]
 
+
   def create
-    # ingredient = Ingredient.find(params[:ingredient_id])
-    # farmer_network = ingredient.user
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.cart = @cart
     @cart_item.ingredient = @ingredient
@@ -13,6 +12,11 @@ class CartsItemsController < ApplicationController
     if @cart_item.save
       redirect_to network_path(Network.find(@cart.network.id))
     end
+  end
+
+  def destroy
+    @cart_item.destroy
+    redirect_to network_path(Network.find(@cart_item.cart.network.id))
   end
 
   private
