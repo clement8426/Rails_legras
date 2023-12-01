@@ -15,6 +15,11 @@ class CartsItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @cart_item.destroy
+    redirect_to network_path(Network.find(@cart_item.cart.network.id))
+  end
+
   private
 
   def set_cart
