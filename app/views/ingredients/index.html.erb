@@ -2,7 +2,7 @@
   <div class="title py-4">
     <h1> Nos Produits </h1>
   </div>
-<div class="container">
+<div id="container" class="container">
   <% @ingredients.group_by(&:category).each do |category, ingredients| %>
     <div class="col-md-4">
       <div class="card border-red mb-4">
@@ -12,7 +12,7 @@
         <div class="card-body">
           <div class="ingredients-grid">
             <% ingredients.each do |ingredient| %>
-              <div class="ingredient-item"> 
+              <div class="ingredient-item">
                 <% if ingredient.photo.attached? %>
                   <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
                 <% else %>
