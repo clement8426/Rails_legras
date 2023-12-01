@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Mes Paniers</h1>
 
-  <div class="card" data-controller="cart">
-    <div class="card-body">
+  <div class="" data-controller="cart">
+    <div class="">
       <% @carts.each do |cart| %>
         <h5 class="card-title">Cart ID: <%= cart.id %></h5>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
@@ -17,6 +17,8 @@
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
                   <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
+                  <!-- Use Turbo Frame to handle the delete action without a full page reload -->
+                  <%= link_to 'Remove', carts_items_path(cart_item), method: :delete, remote: true, data: { turbo_method: :delete, turbo_frame: "cart-frame" }, class: 'btn btn-danger btn-sm' %>
                 </div>
               </div>
             </li>
