@@ -1,24 +1,27 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
+<div class="row justify-content-center background-white image">
+  <div class="col-sm-8 search-bar">
     <%= form_with url: networks_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
-<div class=" row justify-content-center">
-  <div class= "map col-md-4 pt-1">
-    <div style="position: sticky; top: 150px; height: 80vh;">
-      <div style="width: 100%; height: 100%;">
-        <div style="width: 100%; height: 100%;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<div class="row justify-content-center pt-5 red">
+  <div class="col-md-4 mt-5">
+    <div style="position: sticky; height: 500px;">
+      <div style="width: 100%; height: 80%;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
+</div>
+
+<div class="row justify-content-center third">
 </div>
