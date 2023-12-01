@@ -11,7 +11,6 @@ class CartsItemsController < ApplicationController
     @cart_item.ingredient = @ingredient
 
     if @cart_item.save
-      raise
       redirect_to network_path(Network.find(@cart.network.id))
     end
   end
