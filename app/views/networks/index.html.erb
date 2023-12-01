@@ -2,7 +2,7 @@
   <div class="title pt-4">
     <h1>Nos Coopératives</h1>
   </div>
-  <div class="row py-4">
+  <div class="row">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card border-card-red">
@@ -32,6 +32,7 @@
   </div>
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>
+
 <%# <script>
   function animateAndRedirect(url) {
     var card = event.currentTarget; // L'élément cliqué
