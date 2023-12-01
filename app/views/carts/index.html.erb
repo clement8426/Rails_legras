@@ -17,7 +17,7 @@
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
                   <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
-                  <%= link_to 'Remove', carts_items_path(cart_item), remote: true, data: { turbo_method: :delete, turbo_frame: "cart-frame" }, class: 'btn btn-danger btn-sm' %>
+                  <%= link_to 'Delete', carts_item_path(cart_item),  data: { turbo_method: :delete }, class: "btn btn-danger rounded-pill" %>
                 </div>
               </div>
             </li>
