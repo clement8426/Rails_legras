@@ -1,16 +1,6 @@
 <div class="row justify-content-center" data-controller="your-form-controller">
   <div class="col-sm-8 my-3">
-    <%= form_with url: networks_path, method: :get, class: "d-flex", data: { controller: "your-form-controller" } do %>
-      <%= text_field_tag :query,
-                         params[:query],
-                         class: "form-control",
-                         placeholder: "Type a keyword",
-                         data: { controller: "address-autocomplete", address_autocomplete_target: "address" },
-                         wrapper_html: { data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
-      %>
-
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
+    <%= render "shared/form" %>
   </div>
 </div>
 
