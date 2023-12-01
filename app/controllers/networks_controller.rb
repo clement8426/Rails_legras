@@ -4,9 +4,8 @@ class NetworksController < ApplicationController
     @networks = Network.all
     @network_farmers = {}
     @networks = Network.near(current_user.location, 100)
-
-    if params[:query].present?
-      @networks = Network.near(params[:query], 100)
+    if params[:query].present? && !params[:query][:address].blank?
+      @networks = Network.near(params[:query][:address], 100)
     else
       @networks = Network.all
     end
