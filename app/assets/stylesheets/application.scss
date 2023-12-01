@@ -12,33 +12,3 @@
 @import "pages/index";
 @import "networks/index";
 @import "ingredients/index";
-
-.footer {
-  background: rgb(245, 195, 207);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgb(205, 56, 48);
-  bottom: 10px;
-  left: 0; /* Ajoutez cette propriété pour couvrir toute la largeur */
-  width: 100%;
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
-}
