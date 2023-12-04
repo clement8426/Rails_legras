@@ -1,27 +1,57 @@
-.btn-primary{
-  background-color: rgb(245, 195,207);
-  color: rgb(205,56,48);
-  border-radius: 30px;
-  border: 2px solid  rgb(205,56,48);
-  text-decoration: none;
-  }
+.container_producteur {
+  display: flex;
+  justify-content: space-evenly;
 
-  .flex-container {
-    display: flex;
-    justify-content: space-between; /* Alignement horizontal */
-  }
+  align-items: center;
+  min-height: 400px;
+background-color: rgb(36, 102, 74)
+}
 
-  .content, .network-photo {
-    flex: 1; /* Permet à chaque div de prendre un espace égal dans le container */
-  }
-
-  .network-photo {
-    width: auto; /* ou une autre taille fixe si nécessaire */
-    height: auto; /* ou une autre taille fixe si nécessaire */
-    display: flex; /* Pour centrer l'image si elle est plus petite que le conteneur */
-    justify-content: center;
-    align-items: center;
-  }
+.show_producteur {
+  font-size: 40px;
+}
 
 
-  
+.show_pdt img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.network-photo img {
+  width: 100%;
+  min-height: 45%;
+  max-height: 55%;
+
+  object-fit: cover;
+}
+
+
+.card-body-producteur {
+  background-color: white;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form_product_quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(255, 82, 81);
+}
+
+.wrapper {
+  background-color: rgb(255, 82, 81);
+}
+
+.top-producteur {
+  background-color: white;
+}

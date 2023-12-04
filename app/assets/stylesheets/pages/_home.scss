@@ -18,10 +18,15 @@
   box-shadow: 10px 5px 5px grey;
 }
 
-.red {
-  background-image: url("fond2.jpg");
-  opacity: 0.5;
-  height: 600px;
+
+.form{
+text-align: center;
+margin-top: 150px;
+}
+
+
+.red{
+  background-image: url("kraft.jpg");
 }
 
 .simple_form.query {
@@ -34,6 +39,7 @@
   display: inline-block;
   margin-right: 10px;
 }
+
 
 .select {
   vertical-align: top;
@@ -49,10 +55,12 @@
 
 
 #imagedesc{
+  margin-top: 10px;
   color: #24664a;
   width: 55%;
   align-items: center;
 }
+
 .third{
 
 .form-select {
