@@ -1,6 +1,7 @@
 class CartsItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cart, :set_ingredient, only: [:create]
+  before_action :set_cart, only: [:create, :destroy]
+  before_action :set_ingredient, only: [:create]
   # before_action :set_ingredient, only: [:create]
 
 
@@ -15,8 +16,12 @@ class CartsItemsController < ApplicationController
   end
 
   def destroy
-    @cart_item.destroy
-    redirect_to network_path(Network.find(@cart_item.cart.network.id))
+    @cart_item = CartItem.find(params[:id])
+    @cart = @cart_item.cart
+    if @cart_item.destroy
+      @cart.destroy if @cart.cart_items.empty?
+      redirect_to carts_path
+    end
   end
 
   private
@@ -35,5 +40,9 @@ class CartsItemsController < ApplicationController
 
   def cart_item_params
     params.require(:cart_item).permit(:quantity)
+  end
+
+  def set_cart_item
+    @cart_item = CartItem.find(params[:id])
   end
 end

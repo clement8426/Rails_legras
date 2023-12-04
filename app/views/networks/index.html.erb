@@ -2,14 +2,14 @@
   <div class="title pt-4">
     <h1>Nos Coopératives</h1>
   </div>
-  <div class="row py-4">
+  <div class="row">
     <% @networks.each do |network| %>
       <div class="col-md-4 mb-3">
         <div class="card border-card-red">
           <div class="card-header" style="background-image: url('<%= cl_image_path(network.photo.last.key, height: 100, width: 100) %>'); background-size: cover;">
             <h2><%= network.name %></h2>
           </div>
-          <div class="card-body border-square">
+          <div class="card-body border-squared">
             <% @network_farmers[network.id].each do |farmer| %>
               <div class="card mb-3">
                 <div class="card-container pt-3">
@@ -32,6 +32,7 @@
   </div>
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
 </div>
+
 <%# <script>
   function animateAndRedirect(url) {
     var card = event.currentTarget; // L'élément cliqué

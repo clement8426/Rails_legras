@@ -14,6 +14,9 @@ export default class extends Controller {
         this.element.querySelector(".ship").innerText
       );
       progressWidth = (sum / minShippingAmount) * 100;
+      if (progressWidth >= 100) {
+        this.element.querySelectorAll('button')[i].classList.remove("d-none")
+      }
       pro.style.width = progressWidth + "%";
       i += 1;
     });
