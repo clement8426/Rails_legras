@@ -1,8 +1,8 @@
-.btn-primary{
-background-color: rgb(245, 195,207);
-color: rgb(205,56,48);
-border-radius: 30px;
-border: 2px solid  rgb(205,56,48);
+.btn-primary {
+  background-color: rgb(245, 195, 207);
+  color: rgb(205, 56, 48);
+  border-radius: 30px;
+  border: 2px solid rgb(205, 56, 48);
 }
 
 .background-white {
@@ -18,19 +18,37 @@ border: 2px solid  rgb(205,56,48);
   box-shadow: 10px 5px 5px grey;
 }
 
-.red{
+.red {
   background-image: url("fond2.jpg");
   opacity: 0.5;
   height: 600px;
 }
 
+.simple_form.query {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 1rem; /* Adjust the margin-bottom as needed */
+}
 
-.search-bar{
+.mb-3 {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.select {
+  vertical-align: top;
+}
+
+.search-bar {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.form-select {
+  width: 100%;
 }
 
 .third {

@@ -1,8 +1,10 @@
-<%= simple_form_for :query, url: networks_path, method: :get do |f| %>
+<%= simple_form_for :query, url: networks_path, method: :get, data: { controller: "geoloc", geoloc_api_key_value: ENV['MAPBOX_API_KEY'] } do |f| %>
   <%= f.input :address,
     label: false,
-    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+    input_html: { id: "query_address", data: { address_autocomplete_target: "address", geoloc_target: "address" }, class: "d-none" },
+    wrapper_html: { data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"], geoloc_target: "addressWrapper" } }
   %>
-  <%= f.button :submit%>
+  <%= f.input :search_category, collection: ["10km", "25km", "50km", "100km"], selected: "10km", label: false, class: "d-none" %>
+
+  <%= f.button :submit %>
 <% end %>
