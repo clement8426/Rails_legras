@@ -1,15 +1,27 @@
 <div class="container">
-  <div class="title py-4">
-    <h1 class="text-center mb-4">Mes Paniers</h1>
-  </div>
+    <h1>Mes Paniers</h1>
+
+  <p>Generated Recipe:</p>
+  <p><%= @name %></p>
+
+  <% @steps.each do |step| %>
+    <p><%= step %></p>
+  <% end %>
+
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+</div>
 
 
-<p>Generated Recipe:</p>
-<p><%= @generated_content %></p>
-  <div class="row">
-    <% @carts.each do |cart| %>
-      <div class="col-md-6 mb-4 panieruno">
-        <h5 class="card-top card-title">Cart ID: <%= cart.id %></h5>
+
+
+  <div class="" data-controller="cart">
+    <div class="">
+      <% @carts.each do |cart| %>
+        <h2 class="cart-title">Panier N°: <%= cart.id %></h2>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
