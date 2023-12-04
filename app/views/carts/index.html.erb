@@ -1,37 +1,18 @@
-<div class="container">
-    <h1>Mes Paniers</h1>
-
-  <p>Generated Recipe:</p>
-  <p><%= @name %></p>
-
-  <% @steps.each do |step| %>
-    <p><%= step %></p>
-  <% end %>
-
-  <ul>
-    <% @ingredients.each do |ingredient| %>
-      <li><%= ingredient %></li>
-    <% end %>
-  </ul>
-</div>
-
-
-
-
-  <div class="" data-controller="cart">
-    <div class="">
+<div class="cart-index">
+ <h1>Mes Paniers</h1>
+  <div class="carts" data-controller="cart">
+    <div class="cart-list">
       <% @carts.each do |cart| %>
+        <ul class="col-md-4 list-group-flush mt-5" id="cart<%= cart.id %>-items">
         <h2 class="cart-title">Panier N°: <%= cart.id %></h2>
-        <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
-            <li class="card-body list-group-item">
-              <div class="row-2">
+            <li class="cart-body list-group-item pt-3">
+              <div class="cart-row">
                 <div class="">
-                  <%= cart_item.quantity %> <%= cart_item.ingredient.name %>
-
+                  <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
                 </div>
-                <div class="col-md-4 text-right">
+                <div class="text-right">
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
                   total: <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
@@ -40,16 +21,30 @@
               </div>
             </li>
           <% end %>
+          <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="mt-2 ship">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
+          <p class="mt-2 sum-of-all"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
+          <button class="d-none my-3">Payer</button>
         </ul>
-        <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
-          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <p class="mt-2 ship">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
-        <p class="mt-2 sum-of-all"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
-        <button class="d-none my-3">Payer</button>
       <% end %>
     </div>
   </div>
 
+  <div class="col md-4 recommendations">
+    <p>Generated Recipe:</p>
+    <p><%= @name %></p>
+    <% @steps.each do |step| %>
+      <p><%= step %></p>
+    <% end %>
+    <ul>
+      <% @ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </div>
+
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1 align-self-baseline"  %>
+
 </div>
