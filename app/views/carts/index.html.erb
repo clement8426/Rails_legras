@@ -1,10 +1,10 @@
 <div class="cart-index">
- <h1 class="py-4">Mes Paniers</h1>
   <div class="carts" data-controller="cart">
+   <h1 class="pt-5">Mes Paniers</h1>
     <div class="cart-list">
       <% @carts.each do |cart| %>
-        <ul class="col-md-4 list-group-flush pt-5" id="cart<%= cart.id %>-items">
-        <h2 class="cart-title">Panier N° <%= cart.id %></h2>
+        <ul class="col-md-4 list-group-flush mt-5" id="cart<%= cart.id %>-items">
+        <h2 class="cart-title pt-3">Panier N°<%= cart.id %></h2>
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
             <li class="cart-body list-group-item pt-3 pb-1">
@@ -33,8 +33,5 @@
       <% end %>
     </div>
   </div>
-
-
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1 align-self-baseline"  %>
-
 </div>
