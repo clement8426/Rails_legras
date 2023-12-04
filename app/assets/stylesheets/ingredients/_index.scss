@@ -1,28 +1,21 @@
-/* Styles globaux et ajustements */
-#container {
+#ingredients-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap; /* Ajouté pour s'assurer que les éléments passent à la ligne suivante si nécessaire */
-  justify-content: space-between;
+.ingredient {
+  flex: 0 0 calc(33.333% - 20px);
+  margin: 10px;
 }
 
-.col-md-4 {
-  flex: 0 0 calc(33.333% - 20px); /* Ajustement pour prendre en compte les marges */
-  margin: 10px; /* Ajuster la marge selon les besoins */
-}
-
-/* Styles pour les cartes */
-.card {
+.border-red {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   justify-content: space-between;
   border: 2px solid rgb(205, 56, 48);
+  width: 100%;
 }
 
 .card-top {
@@ -32,11 +25,11 @@
   border-top-right-radius: 28px !important;
 }
 
-.card-title {
+.category-title {
   text-align: center;
 }
 
-.card-body {
+.ingredient-body {
   background-color: white;
   border-bottom-left-radius: 28px;
   border-bottom-right-radius: 28px;
@@ -46,21 +39,19 @@
   flex-direction: column;
 }
 
-/* Styles pour les ingrédients */
 .ingredients-grid {
   display: flex;
   flex-wrap: wrap;
 }
 
 .ingredient-item {
-  flex: 0 0 33.333%; /* 100% / 3 */
+  flex: 0 0 33.333%;
   box-sizing: border-box;
   padding: 5px;
   text-align: center;
-  margin-bottom: 10px; /* Ajuster selon l'espacement désiré */
+  margin-bottom: 10px;
 }
 
-/* Styles pour les titres */
 h1 {
   font-size: 30px;
   color: rgb(205, 56, 48);
@@ -69,8 +60,4 @@ h1 {
 
 h2 {
   font-size: 20px;
-}
-
-h3 {
-  font-size: 15px;
 }

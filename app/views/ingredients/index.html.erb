@@ -1,15 +1,15 @@
 <body>
-  <div class="title py-4">
+  <div class="ingredients-title py-4">
     <h1> Nos Produits </h1>
   </div>
-<div id="container" class="container">
+<div id="ingredients-list">
   <% @ingredients.group_by(&:category).each do |category, ingredients| %>
-    <div class="col-md-4">
+    <div class="ingredient col-md-4">
       <div class="card border-red mb-4">
-        <div class="card-top">
-          <h2 class="card-title py-2"><%= category %></h2>
+        <div class="category-top">
+          <h2 class="category-title py-2"><%= category %></h2>
         </div>
-        <div class="card-body">
+        <div class="ingredient-body">
           <div class="ingredients-grid">
             <% ingredients.each do |ingredient| %>
               <div class="ingredient-item">
