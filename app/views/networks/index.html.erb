@@ -1,46 +1,16 @@
-<div class="container">
-  <div class="title pt-4">
-    <h1>Nos Coopératives</h1>
-  </div>
-  <div class="row">
-    <% @networks.each do |network| %>
-      <div class="col-md-4 mb-3">
-        <div class="card border-card-red">
-          <div class="card-header" style="background-image: url('<%= cl_image_path(network.photo.last.key, height: 100, width: 100) %>'); background-size: cover;">
-            <h2><%= network.name %></h2>
-          </div>
-          <div class="card-body border-squared">
-            <% @network_farmers[network.id].each do |farmer| %>
-              <div class="card mb-3">
-                <div class="card-container pt-3">
-                  <h3 class="farmer-name pb-2"><%= farmer.name %></h3>
-                  <ul>
-                    <% farmer.ingredients.pluck(:category).uniq.each do |category| %>
-                      <li><%= category %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              </div>
-            <% end %>
-          </div>
-          <div class="card-footer">
-            <%= link_to 'Voir la Coopérative', network_path(network), class: 'btn btn-primary' %>
-          </div>
+
+<% @networks.each do |network| %>
+  <div id="network-card-list">
+    <div class="network-card" style="background-image: url('<%= cl_image_path(network.photo.last.key) %>');">
+      <div class="network-card__overlay"></div>
+      <div class="network-card__content">
+        <div class="network-card__header">
+          <h1 class="network-card__title"><%= network.name %></h1>
+          <h4 class="network-card__info"></h4>
         </div>
+        <p class="network-card__desc"><%= network.description %></p>
+        <button class="btn btn-outline network-card__button" type="button">Découvrir la Coopérative</button>
       </div>
-    <% end %>
+    </div>
   </div>
-  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
-</div>
-
-<%# <script>
-  function animateAndRedirect(url) {
-    var card = event.currentTarget; // L'élément cliqué
-    gsap.to(card, { x: 50, opacity: 0, duration: 0.5, onComplete: function () { redirectToNetwork(url); } });
-  }
-
-  function redirectToNetwork(url) {
-    // Redirigez vers le lien View Network
-    window.location.href = url;
-  }
-</script> %>
+<% end %>
