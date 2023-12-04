@@ -3,9 +3,10 @@ source "https://rubygems.org"
 ruby "3.1.2"
 gem "ruby-openai"
 gem "cloudinary"
-
+gem "nokogiri"
+gem "httparty"
 gem "geocoder"
-
+gem "open-uri"
 gem "pg_search"
 
 gem 'dotenv-rails'
@@ -33,6 +34,7 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem 'uri'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
