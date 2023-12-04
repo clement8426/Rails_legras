@@ -1,10 +1,10 @@
 <div class="cart-index">
- <h1>Mes Paniers</h1>
   <div class="carts" data-controller="cart">
+   <h1 class="pt-5">Mes Paniers</h1>
     <div class="cart-list">
       <% @carts.each do |cart| %>
         <ul class="col-md-4 list-group-flush mt-5" id="cart<%= cart.id %>-items">
-        <h2 class="cart-title">Panier N°: <%= cart.id %></h2>
+        <h2 class="cart-title pt-3">Panier N°<%= cart.id %></h2>
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
             <li class="cart-body list-group-item pt-3">
@@ -16,7 +16,9 @@
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
                   total: <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
-                  <%= link_to 'Effacer', carts_item_path(cart_item),  data: { turbo_method: :delete }, class: "btn btn-danger rounded-pill" %>
+                  <%= link_to carts_item_path(cart_item), data: { turbo_method: :delete }, class: "btn" do %>
+                    <i class="fa-solid fa-trash" style="color: #ff1900;"></i>
+                  <% end %>
                 </div>
               </div>
             </li>
@@ -30,19 +32,6 @@
         </ul>
       <% end %>
     </div>
-  </div>
-
-  <div class="col md-4 recommendations">
-    <p>Generated Recipe:</p>
-    <p><%= @name %></p>
-    <% @steps.each do |step| %>
-      <p><%= step %></p>
-    <% end %>
-    <ul>
-      <% @ingredients.each do |ingredient| %>
-        <li><%= ingredient %></li>
-      <% end %>
-    </ul>
   </div>
 
   <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1 align-self-baseline"  %>
