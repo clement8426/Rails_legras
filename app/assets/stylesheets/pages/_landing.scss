@@ -10,6 +10,13 @@
   }
 }
 
+.bg-image{
+  height: 100vh;
+  background-size: cover; /* This ensures that the background image covers the entire container */
+  background-position: center; /* Center the background image */
+
+}
+
 .landing_wrapper {
   display: flex;
   justify-content: center;
