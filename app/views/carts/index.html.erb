@@ -1,8 +1,11 @@
 <div class="carts">
   <h1>Mes Paniers</h1>
 
-  <div class="cart" data-controller="cart">
-    <div class="cart-body">
+<p>Generated Recipe:</p>
+<p><%= @generated_content %></p>
+
+  <div class="" data-controller="cart">
+    <div class="">
       <% @carts.each do |cart| %>
         <h2 class="cart-title">Cart ID: <%= cart.id %></h2>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
