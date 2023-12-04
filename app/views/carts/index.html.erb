@@ -1,16 +1,18 @@
 <div class="container">
-  <h1>Mes Paniers</h1>
+  <div class="title py-4">
+    <h1 class="text-center mb-4">Mes Paniers</h1>
+  </div>
 
-  <div class="" data-controller="cart">
-    <div class="">
-      <% @carts.each do |cart| %>
-        <h5 class="card-title">Cart ID: <%= cart.id %></h5>
+  <div class="row">
+    <% @carts.each do |cart| %>
+      <div class="col-md-6 mb-4 panieruno">
+        <h5 class="card-top card-title">Cart ID: <%= cart.id %></h5>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col-md-8">
+            <li class="card-body list-group-item">
+              <div class="row-2">
+                <div class="">
                   <%= cart_item.quantity %> <%= cart_item.ingredient.name %>
                 </div>
                 <div class="col-md-4 text-right">
@@ -28,8 +30,9 @@
         </div>
         <p class="mt-2 ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
         <p class="mt-2 sum-of-all"><%= total_cart_price.to_f %></p>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1"  %>
+
+  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1 align-self-baseline"  %>
 </div>
