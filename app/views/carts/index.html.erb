@@ -1,4 +1,4 @@
-<div class="carts">
+<div class="container">
   <h1>Mes Paniers</h1>
 
 <p>Generated Recipe:</p>
@@ -7,20 +7,20 @@
   <div class="" data-controller="cart">
     <div class="">
       <% @carts.each do |cart| %>
-        <h2 class="cart-title">Cart ID: <%= cart.id %></h2>
+        <h5 class="card-title">Panier N°<%= cart.id %></h5>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
-            <li class="cart-list">
-              <div class="cart-quantity">
+            <li class="list-group-item">
+              <div class="row">
                 <div class="col-md-8">
                   <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
                 </div>
-                <div class="col-md-4 text-right"> total:
+                <div class="col-md-4 text-right">
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
-                  <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
+                  total: <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
-                  <%= link_to 'Delete', carts_item_path(cart_item),  data: { turbo_method: :delete }, class: "btn btn-danger rounded-pill" %>
+                  <%= link_to 'Effacer', carts_item_path(cart_item),  data: { turbo_method: :delete }, class: "btn btn-danger rounded-pill" %>
                 </div>
               </div>
             </li>
@@ -29,8 +29,9 @@
         <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
           <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <p class="mt-2 ship"> minimum shipment price: <%= cart.network.minimum_shipping_amount.to_f %>€</p>
-        <p class="mt-2 sum-of-all"> total cart price: <%=total_cart_price.to_f %>€</p>
+        <p class="mt-2 ship">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
+        <p class="mt-2 sum-of-all"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
+        <button class="d-none my-3">Payer</button>
       <% end %>
     </div>
   </div>
