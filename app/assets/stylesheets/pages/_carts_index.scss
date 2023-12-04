@@ -1,49 +1,51 @@
-.panieruno {
+.cart-list {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  border-radius: 50%;
+  border-color: rgb(205, 56, 48);
+  width: 100%;
+}
+
+.list-group-flush {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  justify-content: space-between;
+  background-color: wheat;
+  border-bottom-left-radius: 29px !important;
+  border-bottom-right-radius: 29px !important;
+  border-top-left-radius: 29px !important;
+  border-top-right-radius: 29px !important;
   border: 2px solid rgb(205, 56, 48);
+  width: 45%
+
 }
 
-.card-title {
-  text-align: center;
+.cart-title{
+  justify-content: center!important;
 }
-.card-top {
-  background-color: rgb(245, 195, 207);
-  color: rgb(205, 56, 48);
-  border-top-left-radius: 28px !important;
-  border-top-right-radius: 28px !important;
-}
+
 h1 {
   font-size: 30px;
   color: rgb(205, 56, 48);
   text-align: center;
+  font-weight: 600;
 }
 
-.card-body {
-  background-color: white;
-  border-bottom-left-radius: 28px;
-  border-bottom-right-radius: 28px;
+.cart-body {
   max-height: 400px;
   overflow: scroll;
   display: flex;
   flex-direction: column;
 }
 
-// .container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   width: 100%;
-// }
-
-.row {
+.cart-row {
   display: flex;
-  flex-wrap: wrap; /* Ajouté pour s'assurer que les éléments passent à la ligne suivante si nécessaire */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.col-md-4 {
-  flex: 0 0 calc(33.333% - 20px); /* Ajustement pour prendre en compte les marges */
-  margin: 10px; /* Ajuster la marge selon les besoins */
+.text-right {
+  flex: 0 0 calc(33.333% - 20px);
+  margin: 10px;
 }
