@@ -1,23 +1,24 @@
 <div class="carts">
   <h1>Mes Paniers</h1>
-
   <div class="cart" data-controller="cart">
-    <div class="cart-body">
+    <div class="cart-body mx-4">
       <% @carts.each do |cart| %>
         <h2 class="cart-title">Cart ID: <%= cart.id %></h2>
         <ul class="list-group list-group-flush" id="cart<%= cart.id %>-items">
           <% total_cart_price = 0 %>
           <% cart.cart_items.each do |cart_item| %>
             <li class="cart-list">
-              <div class="cart-quantity">
+              <div class="row">
                 <div class="col-md-8">
                   <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
                 </div>
-                <div class="col-md-4 text-right"> total:
+                <div class="col-md-4 text-right py-2">
+                  <div class="d-flex justify-content-end">total:
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
                   <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
                   <%= link_to 'Delete', carts_item_path(cart_item),  data: { turbo_method: :delete }, class: "btn btn-danger rounded-pill" %>
+                  </div>
                 </div>
               </div>
             </li>
@@ -26,6 +27,8 @@
         <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
           <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+        <button type="submit" id="checkout-button" class="checkout-button" name="checkout-button" disabled="disabled"></button>
+        <%# <script src="script.js"></script> %>
         <p class="mt-2 ship"> minimum shipment price: <%= cart.network.minimum_shipping_amount.to_f %>€</p>
         <p class="mt-2 sum-of-all"> total cart price: <%=total_cart_price.to_f %>€</p>
       <% end %>

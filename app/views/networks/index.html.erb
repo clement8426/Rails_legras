@@ -9,7 +9,7 @@
           <div class="card-header" style="background-image: url('<%= cl_image_path(network.photo.last.key, height: 100, width: 100) %>'); background-size: cover;">
             <h2><%= network.name %></h2>
           </div>
-          <div class="card-body border-square">
+          <div class="card-body border-squared">
             <% @network_farmers[network.id].each do |farmer| %>
               <div class="card mb-3">
                 <div class="card-container pt-3">
