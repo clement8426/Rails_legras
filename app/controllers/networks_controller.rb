@@ -5,7 +5,8 @@ class NetworksController < ApplicationController
     @network_farmers = {}
     @networks = Network.near(current_user.location, 100)
     if params[:query].present? && !params[:query][:address].blank?
-      @networks = Network.near(params[:query][:address], 100)
+      search_radius = params[:query][:search_category].to_i
+      @networks = Network.near(params[:query][:address], search_radius)
     else
       @networks = Network.all
     end
