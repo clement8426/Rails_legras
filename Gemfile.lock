@@ -256,6 +256,8 @@ GEM
     rake (13.1.0)
     rdoc (6.6.0)
       psych (>= 4.0.0)
+    recipe_scraper (2.2.4)
+      nokogiri
     regexp_parser (2.8.2)
     reline (0.4.1)
       io-console (~> 0.5)
@@ -351,6 +353,7 @@ DEPENDENCIES
   pg_search
   puma (>= 5.0)
   rails (~> 7.1.2)
+  recipe_scraper
   ruby-openai
   sassc-rails
   selenium-webdriver
