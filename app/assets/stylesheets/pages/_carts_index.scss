@@ -41,11 +41,21 @@ h1 {
 
 .cart-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .text-right {
   flex: 0 0 calc(33.333% - 20px);
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.cart-index {
+  height:800px;
+}
+
+.btn{
+ width: 50px;
 }
