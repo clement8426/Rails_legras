@@ -2,6 +2,7 @@ require 'uri'
 require 'nokogiri'
 require 'httparty'
 require 'open-uri'
+require 'recipe_scraper'
 
 class Cart < ApplicationRecord
   belongs_to :user
@@ -20,22 +21,29 @@ class Cart < ApplicationRecord
     })
 
     recipe_name = chaptgpt_response["choices"][0]["message"]["content"]
-    # puts name_for_url(recipe_name)
+    recipe_name = name_for_url(recipe_name)
+    self.scrape_recipe(recipe_name)
 
-
-
-    # self.scrape_recipe(recipe_name)
   end
 
-  # def self.name_for_url(recipe_name)
-  #   URI.encode_www_form_component(recipe_name.strip)
-  # end
+  def self.name_for_url(recipe_name)
+    URI.encode_www_form_component(recipe_name.strip)
+  end
 
-  # def self.scrape_recipe(recipe_name)
-  #   url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{recipe_name}"
-  #   html_file = URI.open(url).read
-  #   html_doc = Nokogiri::HTML(html_file)
-  #   end
+  def self.scrape_recipe(recipe_name)
+    url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{recipe_name}"
+    html_file = URI.open(url).read
+    html_doc = Nokogiri::HTML(html_file)
+    html_doc.search("a")[35].attribute("href").value
+    marmiton_url = "https://www.marmiton.org#{html_doc.search("a")[35].attribute("href").value}"
+    html_file = URI.open(marmiton_url).read
 
-  # end
+    return html_doc = Nokogiri::HTML(html_file)
+    # html_doc.search("recipe-header__title").text.strip
+    # @name = html_doc.css(".recipe-header__title").text.strip
+    # @ingredients = html_doc.css(".card-ingredient").map(&:text).map(&:strip)
+    # @steps = html_doc.css(".recipe-step-list__container").map(&:text).map(&:strip)
+
+
+  end
 end

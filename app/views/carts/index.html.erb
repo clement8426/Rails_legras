@@ -1,8 +1,22 @@
 <div class="carts">
   <h1>Mes Paniers</h1>
 
-<p>Generated Recipe:</p>
-<p><%= @generated_content %></p>
+  <p>Generated Recipe:</p>
+  <p><%= @name %></p>
+
+  <% @steps.each do |step| %>
+    <p><%= step %></p>
+  <% end %>
+
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
 
   <div class="" data-controller="cart">
     <div class="">
