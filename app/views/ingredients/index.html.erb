@@ -1,29 +1,28 @@
 <body>
   <div class="ingredients-title py-4">
-    <h1> Nos Produits </h1>
   </div>
-<div id="ingredients-list">
-  <% @ingredients.group_by(&:category).each do |category, ingredients| %>
-    <div class="ingredient col-md-4">
-      <div class="card border-red mb-4">
-        <div class="category-top">
-          <h2 class="category-title py-2"><%= category %></h2>
-        </div>
-        <div class="ingredient-body">
-          <div class="ingredients-grid">
-            <% ingredients.each do |ingredient| %>
-              <div class="ingredient-item">
-                <% if ingredient.photo.attached? %>
-                  <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
-                <% else %>
-                  <p>Pas de photo disponible</p>
-                <% end %>
-                <p class="card-text"><%= ingredient.name %></p>
-              </div>
-            <% end %>
+  <div id="ingredients-list">
+    <% @ingredients.group_by(&:category).each do |category, ingredients| %>
+      <div class="ingredient col-md-4">
+        <div class="card border-red mb-4">
+          <div class="category-top">
+            <h2 class="category-title py-2"><%= category %></h2>
+          </div>
+          <div class="ingredient-body">
+            <div class="ingredients-grid">
+              <% ingredients.each do |ingredient| %>
+                <div class="ingredient-item">
+                  <% if ingredient.photo.attached? %>
+                    <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
+                  <% else %>
+                    <p>Pas de photo disponible</p>
+                  <% end %>
+                  <p class="card-text"><%= ingredient.name %></p>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
