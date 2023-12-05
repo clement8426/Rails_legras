@@ -25,6 +25,7 @@
   position: absolute;
   width: 100%;
   padding-bottom: 110px;
+  top: 0;
   &::before {
     content: "";
     position: absolute;
@@ -33,6 +34,7 @@
     background-image: url("paper.png");
     background-size: cover;
     mix-blend-mode: screen;
+    top: -50px;
   }
 }
 .navbar-nav {
@@ -44,7 +46,7 @@
   width: 175px;
 }
 
-.nav-item{
+.nav-item {
   font-size: 15px;
 }
 /////////////// A DEPLACER DANS BUTTON.SCSS
@@ -52,7 +54,7 @@
 .link {
   text-decoration: none;
   color: $dark;
-  &:hover {
+  &:hover  {
     color: $dark;
     font-weight: bolder;
   }

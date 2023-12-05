@@ -1,46 +1,47 @@
-<div class=background-network>
-<div class="top-producteur"><h1><%= @network.name %></h1>
-</div>
-<div class="container_producteur">
+<body class="page-specific-body-class">
+  <div class="background-network">
+    <div class="top-producteur">
+      <h1><%= @network.name %></h1>
+    </div>
 
-  <div class="show_producteur">
-      <% @network_farmers.each do |farmer| %>
-      <div class="show_pdt shadow">
-        <%= cl_image_tag farmer.photo.last.key%>
-        <div style="margin-top: 10px; margin-bottom: 10px;">
-          <%= farmer.name %>
-        </div>
-        </div>
-      <% end %>
-  </div>
-</div>
-</div>
-
-<div class="container-produit-network">
-
-    <% @network_farmers.each do |farmer| %>
-      <% farmer.ingredients.each do |ingredient| %>
-        <div class="card-product-network">
-        <div class="photo-produits shadow">
-        <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
-        </div>
-        <div class="dnd p-3 mt-2 text-center shadow">
-          <h5><%= ingredient.name %></h5>
-          <h5>Prix : <%= ingredient.price %>€</h5>
-
-          <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), html: { class: 'simple-form' } do |f| %>
-            <div class="form_product_quantity">
-              <%= f.input :quantity, as: :numeric, input_html: { value: 1, min: 1, class: 'form-control', style: "width:50%" }, label: false %>
+    <div class="container_producteur">
+      <div class="show_producteur">
+        <% @network_farmers.each do |farmer| %>
+          <div class="show_pdt shadow">
+            <%= cl_image_tag farmer.photo.last.key %>
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+              <%= farmer.name %>
             </div>
-            <div class="form_product_submit-produit">
-              <%= f.submit 'Add to Cart', class: 'tamere' %>
-
-            </div>
-
-          <% end %>
           </div>
-        </div>
-      <% end %>
-    <% end %>
+        <% end %>
+      </div>
+    </div>
 
-</div>
+    <div class="container-produit-network">
+      <% @network_farmers.each do |farmer| %>
+        <% farmer.ingredients.each do |ingredient| %>
+          <div class="card-product-network">
+            <div class="photo-produits shadow">
+              <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
+            </div>
+
+            <div class="dnd p-3 mt-2 text-center shadow">
+              <h5><%= ingredient.name %></h5>
+              <h5>Prix : <%= ingredient.price %>€</h5>
+
+              <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), html: { class: 'simple-form' } do |f| %>
+                <div class="form_product_quantity">
+                  <%= f.input :quantity, as: :numeric, input_html: { value: 1, min: 1, class: 'form-control', style: "width:50%" }, label: false %>
+                </div>
+
+                <div class="form_product_submit-produit">
+                  <%= f.submit 'Add to Cart', class: 'tamere' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</body>
