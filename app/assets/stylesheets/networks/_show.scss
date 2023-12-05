@@ -4,13 +4,12 @@
 
   align-items: center;
   min-height: 400px;
-background-color: rgb(36, 102, 74)
+  background-color: rgb(36, 102, 74);
 }
 
 .show_producteur {
   font-size: 40px;
 }
-
 
 .show_pdt img {
   width: 120px;
@@ -26,7 +25,6 @@ background-color: rgb(36, 102, 74)
 
   object-fit: cover;
 }
-
 
 .card-body-producteur {
   background-color: white;
@@ -44,12 +42,8 @@ background-color: rgb(36, 102, 74)
   align-items: center;
 }
 
-.container {
-  background-color: rgb(255, 82, 81);
-}
-
 .wrapper {
-  background-image: url("kraft.png")
+  background-image: url("kraft.png");
 }
 
 .top-producteur {
