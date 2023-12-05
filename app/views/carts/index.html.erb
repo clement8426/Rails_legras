@@ -1,40 +1,43 @@
-<div class="cart-index">
-<div class="container">
-
-
-  <div class="carts" data-controller="cart">
-   <h1 class="pt-5">Mes Paniers</h1>
+<div class="cart-index d-flex flex-column">
+  <div class="carts flex-grow-1" data-controller="cart">
+    <h1 class="pt-5">Mes Paniers</h1>
     <div class="cart-list">
       <% @carts.each do |cart| %>
-        <ul class="col-md-4 list-group-flush mt-5" id="cart<%= cart.id %>-items">
-        <h2 class="cart-title pt-3">Panier N°<%= cart.id %></h2>
+        <div class="col-md-4 list-group-flush m-5" id="cart<%= cart.id %>-items">
+          <h2 class="cart-number text-center pt-4">Panier N°<%= cart.id %></h2>
           <% total_cart_price = 0 %>
-          <% cart.cart_items.each do |cart_item| %>
-            <li class="cart-body list-group-item pt-3 pb-1">
-              <div class="cart-row">
-                <div class="">
+          <div class="flex-grow-1">
+            <% cart.cart_items.each do |cart_item| %>
+              <div class="block d-flex justify-content-space-evenly">
+                <div class="d-flex align-items-center">
                   <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
                 </div>
-                <div class="text-right">
+                <div class="text-right d-flex align-items-center justify-content-between">
                   <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
-                  total: <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
+                  Total: <%= number_to_currency(item_total_price, unit: "€", format: "%n %u") %>
                   <% total_cart_price += item_total_price %>
-                    <%= link_to carts_item_path(cart_item), data: { turbo_method: :delete }, class: "btn" do %>
-                      <i class="fa-solid fa-trash" style="color: #ff1900;"></i>
-                    <% end %>
+                  <%= link_to carts_item_path(cart_item), data: { turbo_method: :delete }, class: "btn" do %>
+                    <i class="fa-solid fa-trash" style="color: #ff1900;"></i>
+                  <% end %>
                 </div>
               </div>
-            </li>
-          <% end %>
-          <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
-            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            <% end %>
           </div>
-          <p class="mt-2 ship">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
-          <p class="mt-2 sum-of-all"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
-          <button class="d-none my-3">Payer</button>
-        </ul>
+          <div class="progress mx-auto" style="width: 83%;" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
+          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="px-5 text-align-start ms-1">Montant min: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
+          <p class="d-none ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
+          <p class="d-none sum-of-all"><%= total_cart_price.to_f %></p>
+          <div class="d-flex justify-content-between me-3">
+            <p class="pt-3 px-5 text-center ms-1">Total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
+            <button class="d-none my-3">Payer</button>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
-  <%= link_to 'Retour', home_path, class:"btn-primary btn-lg p-2 mx-1 align-self-baseline"  %>
+  <div class="ms-4 mb-5">
+      <%= link_to 'Retour', home_path, class:"btn-retour btn-lg p-2"%>
+  </div>
 </div>

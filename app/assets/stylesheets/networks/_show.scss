@@ -4,7 +4,7 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: 400px;
-  background-color: rgb(36, 102, 74)
+  background-color: rgb(36, 102, 74);
 }
 
 .show_producteur {
@@ -26,7 +26,6 @@
   font-size: 20px;
 }
 
-
 .show_pdt img {
   height: 200px;
   width: 300px;
@@ -44,7 +43,6 @@
   object-fit: cover;
 }
 
-
 .card-body-producteur {
   border-radius: 10px;
   max-height: 400px;
@@ -61,9 +59,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(36,102,74,1) 6
   align-items: center;
 }
 
-
-.background-network {
-  background-color: rgb(255, 82, 81);
+.wrapper {
+  background-image: url("kraft.png");
 }
 
 .top-producteur {

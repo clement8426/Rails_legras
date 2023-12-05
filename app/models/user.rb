@@ -2,7 +2,7 @@ class User < ApplicationRecord
   self.inheritance_column = nil
   has_many :user_ingredients
   has_many :ingredients, through: :user_ingredients
-  has_many :carts
+  has_many :carts, dependent: :destroy
   belongs_to :network, optional: true
   has_many_attached :photo
 

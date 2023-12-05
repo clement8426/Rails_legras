@@ -1,32 +1,32 @@
-
-<div class="row justify-content-center background-white image">
-
-<div class="form">
-  <%= render "shared/form" %>
-</div>
+<div class="banner">
+  <div class="row">
+    <div class="form bg-light">
+      <h3 class="mb-5">Vous recherchez des coopératives proches de chez vous ? Une en particulier ? Des produits spécifiques ?</h3>
+      <%= render "shared/form" %>
+      <p>N'attendez plus pour commander les bons produits des fermes près de chez vous et contribuez au circuit court!</p>
+    </div>
+  </div>
 </div>
 
 <div class="row justify-content-center third">
-    <%= image_tag("networks/process.png", id: "imagedesc") %>
-  </div>
+  <%= image_tag("networks/process.png", id: "imagedesc") %>
 </div>
 
-
-  <div class="col-sm-8 search-bar">
-  </div>
+<div class="col-sm-8 search-bar">
 </div>
 
-<div class="justify-content-center pt-5 red">
+</div>
+
+<div class="justify-content-center pt-5 red div-last">
   <h1>Venez rencontrer les producteurs de votre région !</h1>
   <div class="d-flex justify-content-evenly">
     <div class="d-flex">
-      <div class="d-flex order-md-1 align-items-start">
+      <div class="d-flex order-md-1 align-items-start broder-img">
         <div class="col-md-4" style="height: 100%;">
-          <%= image_tag("alice.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;") %>
+          <%= image_tag("alice.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;  ") %>
         </div>
 
-
-        <div class="col-md-4" style="height: 100%;">
+        <div class="col-md-4 pad-img" style="height: 100%;">
           <%= image_tag("recolte.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;") %>
         </div>
 
@@ -36,11 +36,7 @@
       </div>
     </div>
 
-      <div style="height: 450px; width: 40%; margin-top: 9px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    <div style="height: 450px; width: 40%; border-radius: 2px" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-
 </div>

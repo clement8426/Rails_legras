@@ -1,10 +1,3 @@
-.btn-primary {
-  background-color: rgb(245, 195, 207);
-  color: rgb(205, 56, 48);
-  border-radius: 30px;
-  border: 2px solid rgb(205, 56, 48);
-}
-
 .background-white {
   background-color: white;
   width: 100%;
@@ -18,28 +11,17 @@
   box-shadow: 10px 5px 5px grey;
 }
 
-
-.form{
-text-align: center;
-margin-top: 150px;
-}
-
-
-.red{
-  background-image: url("kraft.jpg");
+.red {
+  background-image: url("kraft.png");
+  background-position: cover;
 }
 
 .simple_form.query {
   display: inline-block;
   width: auto;
   margin-bottom: 1rem; /* Adjust the margin-bottom as needed */
-}
 
-.mb-3 {
-  display: inline-block;
-  margin-right: 10px;
 }
-
 
 .select {
   vertical-align: top;
@@ -53,18 +35,63 @@ margin-top: 150px;
   text-align: center;
 }
 
-
-#imagedesc{
+#imagedesc {
   margin-top: 10px;
   color: #24664a;
   width: 55%;
   align-items: center;
 }
 
-.third{
-
-.form-select {
-  width: 100%;
-}
+.third {
+  .form-select {
+    width: 100%;
+  }
   background-color: #24664a;
+}
+
+///////////////////////////
+///
+///
+.banner {
+  padding: 330px 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3) 16.58%,
+      rgba(0, 0, 0, 0) 43.32%
+    ),
+    url("bg-nappe.png");
+  background-size: cover;
+  & > .row {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.form {
+  margin-top: -50px;
+  padding: 80px;
+  max-width: 750px;
+
+}
+
+.form form {
+  display: flex !important;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.pad-img {
+  padding: 0 10px;
+}
+
+.div-last {
+  padding-bottom: 10px;
+}
+
+.broder-img {
+  img {
+    border-radius: 2px;
+  }
 }

@@ -1,14 +1,15 @@
 @import "show";
 
 h1 {
-color:rgb(205,56,48);
-font-size: 30px;
-font-weight: 600;
+  margin-top: 115px;
+  color: rgb(205, 56, 48);
+  font-size: 30px;
+  font-weight: 600;
 }
 
-h2{
+h2 {
   font-size: 20px;
-  color: rgb(205,56,48);
+  color: rgb(205, 56, 48);
   font-weight: bolder;
 }
 
@@ -17,45 +18,45 @@ h3 {
   font-weight: bolder;
 }
 
-.card{
+.card {
   border-radius: 30px;
   overflow: hidden;
 }
 
 .border-card-red {
-  border: 2px solid  rgb(205,56,48);
+  border: 2px solid rgb(205, 56, 48);
 }
 
-.title{
+.title {
   text-align: center;
 }
 
 .card-header {
   border-top-left-radius: 28px !important;
   border-top-right-radius: 28px !important;
-  height:250px;
+  height: 250px;
 }
 
 .farmer-name {
-text-align: center;
+  text-align: center;
 }
 
-.card-footer{
+.card-footer {
   border-bottom-left-radius: 29px !important;
   border-bottom-right-radius: 29px !important;
 }
 
-.btn-primary{
-  background-color: rgb(245, 195,207);
-  color: rgb(205,56,48);
+.btn-primary {
+  background-color: rgb(245, 195, 207);
+  color: rgb(205, 56, 48);
   font-weight: 800;
   border-radius: 30px;
   border: 2px solid  rgb(205,56,48);
   text-decoration: none;
-  }
+}
 
 .img {
-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .border-squared {

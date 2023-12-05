@@ -1,5 +1,5 @@
 class Network < ApplicationRecord
-  has_many :users # farmers
+  has_many :users, dependent: :destroy # farmers
   has_many :ingredients, -> { distinct }, through: :users
 
   geocoded_by :location

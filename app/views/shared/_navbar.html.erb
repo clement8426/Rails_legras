@@ -1,49 +1,53 @@
 <% if params[:action] != "landing" %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "logo.png" %>
-      <% end %>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <a class="btn-primary btn-lg p-2 mx-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  Idée de Recette
-              <%= link_to "Home", home_path, class: "btn-primary btn-lg p-2 mx-1" %>
-            </li>
-            <li class="nav-item">
-            <%= link_to "Mon Panier", carts_path, class: "btn-primary btn-lg p-2 mx-1"%>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Nos Producteurs", networks_path, class: "btn-primary btn-lg p-2 mx-1"%>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Nos Produits", ingredients_path, class: "btn-primary btn-lg p-2 mx-1"%>
-            </li>
-            <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-            </a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+    <div class="d-flex justify-content-between position-relative px-4 w-100">
+
+        <%= link_to root_path, class: "navbar-logo" do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li class="nav-item active">
+                <a class="btn-primary btn-lg p-2 mx-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  Idée de Recette
+              <li class="nav-item">
+                <%= link_to "Nos Producteurs", networks_path, class: "link"%>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to "Nos Produits", ingredients_path, class: "link"%>
+              </li>
+
+              <li class="nav-item">
+              <%= link_to "Mon Panier", carts_path, class: "link"%>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if current_user.photo.attached?  %>
+                  <%= cl_image_tag current_user.photo.first.key, class: "avatar", alt: "dropdown menu" %>
+                <% else  %>
+                  <%= image_tag "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=", class: "avatar", alt: "dropdown menu" %>
+                <% end %>                </a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <%= link_to "Action", "#", class: "dropdown-item" %>
+                  <%= link_to "Another action", "#", class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
     </div>
+
   </div>
 <% end %>
 
