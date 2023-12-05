@@ -1,6 +1,6 @@
 <div class="cart-index d-flex flex-column">
   <div class="carts flex-grow-1" data-controller="cart">
-    <h1 class="pt-5 text-center">Mes Paniers</h1>
+    <h1 class="pt-5">Mes Paniers</h1>
     <div class="cart-list">
       <% @carts.each do |cart| %>
         <div class="col-md-4 list-group-flush m-5" id="cart<%= cart.id %>-items">
@@ -8,7 +8,7 @@
           <% total_cart_price = 0 %>
           <div class="flex-grow-1">
             <% cart.cart_items.each do |cart_item| %>
-              <div class="block d-flex justify-content-between">
+              <div class="block d-flex justify-content-space-evenly">
                 <div class="d-flex align-items-center">
                   <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
                 </div>
@@ -24,7 +24,7 @@
             <% end %>
           </div>
           <div class="progress mx-auto" style="width: 83%;" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
-            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <p class="px-5 text-align-start ms-1">Montant min: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
           <p class="d-none ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
@@ -38,6 +38,6 @@
     </div>
   </div>
   <div class="ms-4 mb-5">
-    <%= link_to 'Retour', home_path, class:"btn-retour btn-lg p-2"%>
+      <%= link_to 'Retour', home_path, class:"btn-retour btn-lg p-2"%>
   </div>
 </div>
