@@ -7,7 +7,7 @@ require 'recipe_scraper'
 class Cart < ApplicationRecord
   belongs_to :user
   belongs_to :network
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
 
   def self.content(ingredients)
     client = OpenAI::Client.new
