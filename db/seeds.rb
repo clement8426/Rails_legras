@@ -27,7 +27,7 @@ network1.save
 
 network2 = Network.create!(
   name: "Les Jardins Partagés",
-  location: "Place de la Bourse, 33000 Bordeauxs",
+  location: "Place de la Bourse, 33000 Bordeaux",
   minimum_shipping_amount: "120",
   description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables. Livraison les mercredis et samedis dans un rayon de 15km de Paris."
 )
