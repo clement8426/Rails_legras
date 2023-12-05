@@ -66,7 +66,7 @@ network5.save
 p "creating user table..."
 
 user1 = User.create!(
-  name: "Marie deRennes",
+  name: "Jean deRennes",
   type: "farmer",
   location: "6 Rue de la Monnaie, 35000 Rennes",
   email: "mariedeRennes@example.com",
@@ -92,7 +92,7 @@ user2.photo.attach(io: File.open("app/assets/images/farmers/farmer (4).jpg"), fi
 user2.save
 
 user3 = User.create!(
-  name: "Lucie Bernard",
+  name: "Lucien Bernard",
   type: "farmer",
   location: "2 Avenue des Pays-Bas, 35200 Rennes",
   email: "luciebernard@example.com",
@@ -105,7 +105,7 @@ user3.photo.attach(io: File.open("app/assets/images/farmers/farmer (6).jpg"), fi
 user3.save
 
 user4 = User.create!(
-  name: "Marie Dupont",
+  name: "Martin Dupont",
   type: "farmer",
   location: "15 rue Sainte-Catherine, 33000 Bordeaux",
   email: "mariedupont@example.com",
@@ -131,7 +131,7 @@ user5.photo.attach(io: File.open("app/assets/images/farmers/farmer (10).jpg"), f
 user5.save
 
 user6 = User.create!(
-  name: "Sophie Lareine",
+  name: "Damien Lareine",
   type: "farmer",
   location: "12 rue des Bahutiers, 33000 Bordeaux",
   email: "sophielareine@example.com",
@@ -157,7 +157,7 @@ user7.photo.attach(io: File.open("app/assets/images/farmers/farmer (14).jpg"), f
 user7.save
 
 user8 = User.create!(
-  name: "Marie Lavande",
+  name: "Marin Lavande",
   type: "farmer",
   location: "6 Place Duroc, 54700 Pont-à-Mousson",
   email: "marielavande@example.com",
@@ -183,7 +183,7 @@ user9.photo.attach(io: File.open("app/assets/images/farmers/farmer (18).jpg"), f
 user9.save
 
 user10 = User.create!(
-  name: "Claire Deschamps",
+  name: "Paul Deschamps",
   type: "farmer",
   location: "14 route de Thônes, 74940 Annecy-le-Vieux",
   email: "clairedeschamps@example.com",
@@ -222,7 +222,7 @@ user12.photo.attach(io: File.open("app/assets/images/farmers/farmer (24).jpg"), 
 user12.save
 
 user13 = User.create!(
-  name: "Laurent Rousseau",
+  name: "Laurence Rousseau",
   type: "farmer",
   location: "33 avenue des Romains, 74000 Annecy",
   email: "laurentrousseau@example.com",
@@ -261,7 +261,7 @@ user15.photo.attach(io: File.open("app/assets/images/farmers/farmer (30).jpg"), 
 user15.save
 
 user16 = User.create!(
-  name: "Jean-Marie Berland",
+  name: "Sophie Leroy",
   type: "farmer",
   location: "5 avenue de la République, 77340 Pontault-Combault",
   email: "marcbernard@example.com",
@@ -274,7 +274,7 @@ user16.photo.attach(io: File.open("app/assets/images/farmers/farmer (32).jpg"), 
 user16.save
 
 user17 = User.create!(
-  name: "Sophie Leroy",
+  name: "Jean-Marie Berland",
   type: "farmer",
   location: "32 boulevard Victor Hugo, 78300 Poissy",
   email: "sophieleroy@example.com",
