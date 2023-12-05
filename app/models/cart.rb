@@ -1,8 +1,8 @@
 require 'uri'
 require 'nokogiri'
 require 'httparty'
-require 'open-uri'
-require 'recipe_scraper'
+# require 'open-uri'
+# require 'recipe_scraper'
 
 class Cart < ApplicationRecord
   belongs_to :user
