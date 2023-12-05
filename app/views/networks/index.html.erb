@@ -3,18 +3,24 @@
     <h1>Nos Coopératives</h1>
   </div>
 
-<% @networks.each do |network| %>
-  <div id="network-card-list">
-    <div class="network-card" style="background-image: url('<%= cl_image_path(network.photo.last.key) %>');">
-      <div class="network-card__overlay"></div>
-      <div class="network-card__content">
-        <div class="network-card__header">
-          <h1 class="network-card__title"><%= network.name %></h1>
-          <h4 class="network-card__info"></h4>
-        </div>
-        <p class="network-card__desc"><%= network.description %></p>
-        <button class="btn btn-outline network-card__button" type="button">Découvrir la Coopérative</button>
+  <% @networks.each do |network| %>
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url('<%= cl_image_path(network.photo.last.key) %>');"></div>
+        <ul class="details">
+        <h2>Les agriculteurs</h2>
+          <% @network_farmers[network.id].each do |farmer| %>
+            <li class="author"><%= farmer.name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="description">
+        <h1><%= network.name %></h1>
+        <p class="p-network"><%= network.description %></p>
+        <p class="read-more">
+        <%= link_to 'Voir la Coopérative', network_path(network) %>
+        </p>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
