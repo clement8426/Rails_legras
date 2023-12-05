@@ -21,22 +21,22 @@
   <h1>Venez rencontrer les producteurs de votre région !</h1>
   <div class="d-flex justify-content-evenly">
     <div class="d-flex">
-      <div class="d-flex order-md-1 align-items-start">
+      <div class="d-flex order-md-1 align-items-start broder-img">
         <div class="col-md-4" style="height: 100%;">
-          <%= image_tag("alice.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover; border-radius:10px ") %>
+          <%= image_tag("alice.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;  ") %>
         </div>
 
         <div class="col-md-4 pad-img" style="height: 100%;">
-          <%= image_tag("recolte.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;border-radius:10px") %>
+          <%= image_tag("recolte.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;") %>
         </div>
 
         <div class="col-md-4" style="height: 100%;">
-          <%= image_tag("baptiste.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;border-radius:10px") %>
+          <%= image_tag("baptiste.jpeg", class: "img-fluid", style: "height: 450px; object-fit: cover;") %>
         </div>
       </div>
     </div>
 
-    <div style="height: 450px; width: 40%" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div style="height: 450px; width: 40%; border-radius: 2px" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
