@@ -10,26 +10,20 @@
 .list-group-flush {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  background-color: wheat;
-  border-bottom-left-radius: 29px !important;
-  border-bottom-right-radius: 29px !important;
-  border-top-left-radius: 29px !important;
-  border-top-right-radius: 29px !important;
+  background-color: whitesmoke;
   border: 2px solid rgb(205, 56, 48);
   width: 45%
-
 }
 
 .cart-title{
   justify-content: center!important;
 }
 
-h1 {
+.pt-5 {
   font-size: 30px;
-  color: rgb(205, 56, 48);
   text-align: center;
   font-weight: 600;
+  color: black
 }
 
 .cart-body {
@@ -39,16 +33,9 @@ h1 {
   flex-direction: column;
 }
 
-.cart-row {
-  display: flex;
-  justify-content: space-between;
-}
-
 .text-right {
   flex: 0 0 calc(33.333% - 20px);
   margin: 10px;
-  display: flex;
-  flex-direction: row;
 }
 
 .column {
@@ -58,4 +45,22 @@ h1 {
 
 .cart-index {
   height:800px;
+}
+
+.btn{
+ width: 50px;
+}
+
+.my-3{
+  background-color: rgb(245, 195,207);
+  color: rgb(205,56,48);
+  font-weight: 800;
+  border-radius: 30px;
+  border: 2px solid  rgb(205,56,48);
+  text-decoration: none;
+  width: 15%;
+  }
+
+.progress{
+width: 95%;
 }

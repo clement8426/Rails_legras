@@ -3,4 +3,4 @@
   <p><%= network.location %></p>
   <p><%= network.minimum_shipping_amount %>€</p>
 <% end %>
-<a href="<%= "https://www.google.com/maps/search/?api=1&query=#{network.latitude},#{network.longitude}" %>" target="_blank">Voir sur google maps</a>
+<a href="<%= "https://www.google.com/maps/dir/?api=1&origin=#{current_user.latitude},#{current_user.longitude}&destination=#{network.latitude},#{network.longitude}&travelmode=car" %>" target="_blank">Voir sur google maps</a>
