@@ -26,8 +26,10 @@
           <div class="progress" data-cart-min-shipping-amount="<%= cart.network.minimum_shipping_amount.to_f %>">
             <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-          <p class="mt-2 ship">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
-          <p class="mt-2 sum-of-all"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
+          <p class="mt-2 ">montant minimum: <%= cart.network.minimum_shipping_amount.to_f %> € </p>
+          <p class="mt-2"> total panier <%= cart.id %> : <%= total_cart_price.to_f %> € </p>
+          <p class="d-none mt-2 ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
+          <p class="d-none mt-2 sum-of-all"><%= total_cart_price.to_f %></p>
           <button class="d-none my-3">Payer</button>
         </ul>
       <% end %>
