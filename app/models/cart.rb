@@ -13,7 +13,7 @@ class Cart < ApplicationRecord
     client = OpenAI::Client.new
 
     @ingredients = ingredients
-    content_message = "donne moi le nom d une recette qui inclus un ou deux des  ingrédient suivant :#{ingredients}. Je veux que ta réponse ne soit composé que du nom de la recette et rien d autre. "
+    content_message = "donne moi le nom d une recette qui inclus quelques un des ingrédient suivant :#{ingredients}. Je veux que ta réponse ne soit composé que du nom de la recette et rien d autre. "
 
     chaptgpt_response = client.chat(parameters: {
       model: "gpt-3.5-turbo",
@@ -39,11 +39,5 @@ class Cart < ApplicationRecord
     html_file = URI.open(marmiton_url).read
 
     return html_doc = Nokogiri::HTML(html_file)
-    # html_doc.search("recipe-header__title").text.strip
-    # @name = html_doc.css(".recipe-header__title").text.strip
-    # @ingredients = html_doc.css(".card-ingredient").map(&:text).map(&:strip)
-    # @steps = html_doc.css(".recipe-step-list__container").map(&:text).map(&:strip)
-
-
-  end
+    end
 end
