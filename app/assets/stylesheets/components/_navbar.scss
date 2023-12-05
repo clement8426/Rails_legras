@@ -37,13 +37,16 @@
 }
 .navbar-nav {
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .navbar-lewagon .navbar-logo img {
   width: 175px;
 }
 
+.nav-item{
+  font-size: 15px;
+}
 /////////////// A DEPLACER DANS BUTTON.SCSS
 
 .link {

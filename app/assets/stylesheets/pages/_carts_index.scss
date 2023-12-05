@@ -10,19 +10,18 @@
 .list-group-flush {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  background-color: wheat;
-  border-bottom-left-radius: 29px !important;
-  border-bottom-right-radius: 29px !important;
-  border-top-left-radius: 29px !important;
-  border-top-right-radius: 29px !important;
-  border: 2px solid rgb(205, 56, 48);
-  width: 45%
-
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  width: 40%;
+  height: 400px;
 }
 
-.cart-title{
+.cart-number{
   justify-content: center!important;
+  background-color: #304630;
+  border-top-right-radius: 15px !important;
+  border-top-left-radius: 15px !important;
+  height: 20%;
 }
 
 h1 {
@@ -60,6 +59,38 @@ h1 {
   height:800px;
 }
 
-.btn{
- width: 50px;
+.btn-retour{
+  width: 50px;
+  background-color: none;
+  color: black;
+  font-weight: 400;
+  border-radius: 10px;
+  border: px solid  black;
+  text-decoration: none;
+}
+
+.my-3{
+  background-color: rgb(245, 195,207);
+  color: rgb(205,56,48);
+  font-weight: 800;
+  border-radius: 30px;
+  border: 2px solid  rgb(205,56,48);
+  text-decoration: none;
+  width: 15%;
+  }
+
+.progress{
+width: 80%;
+}
+
+.carts {
+  margin-top: 100px;
+}
+
+.block{
+  justify-content: space-evenly;
+}
+
+.cart-number{
+  color: white;
 }
