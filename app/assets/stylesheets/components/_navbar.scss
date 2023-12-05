@@ -1,22 +1,56 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background-image: url('kraft.jpg');
-  background-color: white;
-  height: 125px;
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background-image: url('kraft.jpg');
+//   background-color: white;
+//   height: 125px;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 100px;
+// }
+
+// .btn-primary{
+//   background-color: rgb(245, 195,207);
+//   color: rgb(205,56,48);
+//   border-radius: 30px;
+//   border: 2px solid  rgb(205,56,48);
+//   text-decoration: none;
+//   }
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 110px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("paper.png");
+    background-size: cover;
+    mix-blend-mode: screen;
+  }
+}
+.navbar-nav {
+  align-items: center;
+  gap: 10px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon .navbar-logo img {
   width: 100px;
 }
 
-.btn-primary{
-  background-color: rgb(245, 195,207);
-  color: rgb(205,56,48);
-  border-radius: 30px;
-  border: 2px solid  rgb(205,56,48);
+/////////////// A DEPLACER DANS BUTTON.SCSS
+
+.link {
   text-decoration: none;
+  color: $dark;
+  &:hover {
+    color: $dark;
+    font-weight: bolder;
   }
+}
