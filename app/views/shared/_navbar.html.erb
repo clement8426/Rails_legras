@@ -1,7 +1,6 @@
 <% if params[:action] != "landing" %>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-
     <div class="d-flex justify-content-between position-relative px-4 w-100">
 
         <%= link_to root_path, class: "navbar-logo" do %>
@@ -47,34 +46,20 @@
           </ul>
         </div>
     </div>
-
   </div>
 <% end %>
 
-<%# <%  @user = current_user
-    @carts = @user.carts.includes(:network)
-    @ingredients = @carts.map { |cart| cart.cart_items.map { |cart_item| cart_item.ingredient } }.flatten
-    @generated_content = Cart.content(@ingredients)
-    @name = @generated_content.css("h1").text.strip
-    @ingredients = @generated_content.css(".card-ingredient").map(&:text).map(&:strip)
-    @steps = @generated_content.css(".recipe-step-list__container").map(&:text).map(&:strip) %>
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <div>
+  <div class="offcanvas-body" data-controller="cart-subscription">
+    <div id="cart" data-cart-subscription-target="cart">
 
-    <p>Generated Recipe:</p>
-  <%# <p><%= @name %></p> %>
-  <%# <% @steps.each do |step| %> %>
-    <%# <p><%= step %></p> %>
-  <%# <% end %> %>
-  <ul>
-    <%# <% @ingredients.each do |ingredient| %> %>
-      <%# <li><%= ingredient %></li> %>
-    <%# <% end %> %>
+      
+
     </div>
   </div>
 </div>
