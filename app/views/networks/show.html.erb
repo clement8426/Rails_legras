@@ -17,31 +17,60 @@
       </div>
     </div>
 
-    <div class="container-produit-network">
-      <% @network_farmers.each do |farmer| %>
-        <% farmer.ingredients.each do |ingredient| %>
-          <div class="card-product-network">
-            <div class="photo-produits shadow">
-              <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
-            </div>
-
-            <div class="dnd p-3 mt-2 text-center shadow">
-              <h5><%= ingredient.name %></h5>
-              <h5>Prix : <%= ingredient.price %>€</h5>
-
-              <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), html: { class: 'simple-form' } do |f| %>
-                <div class="form_product_quantity">
-                  <%= f.input :quantity, as: :numeric, input_html: { value: 1, min: 1, class: 'form-control', style: "width:50%" }, label: false %>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="container-produit-network">
+          <% @network_farmers.each do |farmer| %>
+            <% farmer.ingredients.each do |ingredient| %>
+              <div class="card-product-network">
+                <div class="photo-produits shadow">
+                  <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
                 </div>
 
-                <div class="form_product_submit-produit">
-                  <%= f.submit 'Add to Cart', class: 'tamere' %>
+                <div class="dnd p-3 mt-2 text-center shadow">
+                  <h5><%= ingredient.name %></h5>
+                  <h5>Prix : <%= ingredient.price %>€</h5>
+
+                  <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), html: { class: 'simple-form' } do |f| %>
+                    <div class="form_product_quantity">
+                      <%= f.input :quantity, as: :numeric, input_html: { value: 1, min: 1, class: 'form-control', style: "width:50%" }, label: false %>
+                    </div>
+
+                    <div class="form_product_submit-produit">
+                      <%= f.submit 'Add to Cart', class: 'tamere' %>
+                    </div>
+                  <% end %>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-3 fixed-div">
+        <div class="top-cart">
+          <h1>Panier</h1>
+        </div>
+        <div class="bottom-cart">
+          <% if @cart %>
+            <h2>Information panier :</h2>
+            <% total_cart_price = 0 %>
+            <% @cart.cart_items.each do |cart_item| %>
+              <div>
+                <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
+                <p><%= cart_item.quantity %> x <%= cart_item.ingredient.name %> <%= item_total_price %>€   <%= link_to carts_item_path(cart_item), data: { turbo_method: :delete }, class: "btn" do %>
+                  <i class="fa-solid fa-trash" style="color: #ff1900;"></i>
+                <% end %></p>
+                <% total_cart_price += item_total_price %>
+              </div>
+            <% end %>
+            <p class="sum-of-all">Total: <%= total_cart_price.to_f %>€</p>
+            <%= link_to "Mon Panier", carts_path, class: "link"%>
+            <% else %>
+              <p>Aucun panier </p>
+            <% end %>
           </div>
-        <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </body>

@@ -20,7 +20,7 @@ class CartsItemsController < ApplicationController
     @cart = @cart_item.cart
     if @cart_item.destroy
       @cart.destroy if @cart.cart_items.empty?
-      redirect_to carts_path
+      redirect_to request.referrer
     end
   end
 

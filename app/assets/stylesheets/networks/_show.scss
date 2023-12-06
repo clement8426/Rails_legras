@@ -131,3 +131,32 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+// .row {
+// }
+.fixed-div {
+  overflow: auto;
+  margin-top: 75px;
+  position: sticky;
+  top: 30px;
+  right: 20px;
+  align-self: start;
+
+  .top-cart {
+    padding: 8px;
+    background-color: #24664a;
+    border-radius: 10px 10px 0 0;
+
+    h1 {
+      color: white;
+      margin-top: 0;
+    }
+  }
+
+  .bottom-cart {
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+}
