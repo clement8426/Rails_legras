@@ -299,8 +299,6 @@ GEM
       rack (>= 2.0.0)
       rack-protection (>= 2.0.0)
       redis (>= 4.1.0)
-    sidekiq-failures (1.0.4)
-      sidekiq (>= 4.0.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -367,11 +365,11 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.2)
   recipe_scraper
+  redis
   ruby-openai
   sassc-rails
   selenium-webdriver
-  sidekiq (< 7)
-  sidekiq-failures (~> 1.0)
+  sidekiq
   simple_form!
   sprockets-rails
   stimulus-rails

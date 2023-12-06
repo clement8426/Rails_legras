@@ -13,7 +13,7 @@ class RecipeProcessingJob < ApplicationJob
     content_message = "donne moi le nom d une recette qui inclus quelques un des ingrédient suivant :#{ingredients}. Je veux que ta réponse ne soit composé que du nom de la recette et rien d autre. "
 
     chatgpt_response = client.chat(parameters: {
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
       messages: [{ role: "user", content: content_message }]
     })
 
