@@ -134,6 +134,7 @@ $color_grey_dark: #a2a2a2;
       line-height: 1;
       margin: 0;
       font-size: 1.7rem;
+      padding: 0;
     }
     .read-more {
       text-align: right;
@@ -160,6 +161,7 @@ $color_grey_dark: #a2a2a2;
   .p-network {
     position: relative;
     margin: 1rem 0 0;
+    font-size: 20px;
     &:first-of-type {
       margin-top: 1.25rem;
       &:before {
