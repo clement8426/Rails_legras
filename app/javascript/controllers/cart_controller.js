@@ -15,7 +15,7 @@ export default class extends Controller {
 
       progressWidth = (sum / minShippingAmount) * 100;
       if (progressWidth >= minShippingAmount) {
-        this.element.querySelectorAll("button")[i].classList.remove("d-none");
+        this.element.querySelectorAll("button")[i].classList.remove("button-gris");
       }
       pro.style.width = progressWidth + "%";
       i += 1;

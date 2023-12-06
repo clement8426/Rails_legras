@@ -15,6 +15,10 @@
           </div>
         <% end %>
       </div>
+      <div class="min-ship">
+      <p><%= @network.description %></p>
+      <P>* Montant minimun avant livraison : <%= @network.minimum_shipping_amount %> €</P>
+      </div>
     </div>
 
     <div class="row mt-5" data-controller="cart-items">
