@@ -42,10 +42,16 @@
   flex-direction: column;
 }
 
+.ingredient-body::-webkit-scrollbar {
+  display: none;
+}
+
+
 .ingredients-grid {
   display: flex;
   flex-wrap: wrap;
 }
+
 
 .ingredient-item {
   flex: 0 0 33.333%;
