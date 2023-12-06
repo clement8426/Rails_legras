@@ -1,9 +1,10 @@
-  <div class="background-network">
-    <div class="top-producteur">
-      <h1><%= @network.name %></h1>
-    </div>
 
-    <div class="container_producteur">
+<div class="background-network">
+  <div class="container_producteur">
+    <div class="producteur">
+      <div class="top-producteur nom">
+        <h1><%= @network.name %></h1>
+      </div>
       <div class="show_producteur">
         <% @network_farmers.each do |farmer| %>
           <div class="show_pdt shadow">
@@ -16,11 +17,11 @@
       </div>
     </div>
 
-    <div class="row" data-controller="cart-items">
+    <div class="row mt-5" data-controller="cart-items">
         <%= render "networks/list", network_farmers: @network_farmers %>
     </div>
-
   </div>
+</div>
 
 
 

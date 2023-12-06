@@ -20,7 +20,7 @@ network1 = Network.create!(
   name: "Coopérative des Terroirs de France",
   location: "12 Rue de la Monnaie, 35000 Rennes",
   minimum_shipping_amount: "100",
-  description: "Nous somme une coopérative de producteurs locaux, nous livrons dans un rayon de 10km autour de Paris. Nous livrons le mardi et le vendredi. Nos produits sont frais et de saison et cultivés dans le respect de l'environnement avec beaucoup d'amour."
+  description: "Nous livrons le mardi et le vendredi. Nos produits sont frais et de saison et cultivés dans le respect de l'environnement avec beaucoup d'amour."
 )
 network1.photo.attach(io: File.open("app/assets/images/networks/farm (1).jpg"), filename: 'coop_terroirs.jpg', content_type: 'image/jpg')
 network1.save

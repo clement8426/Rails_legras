@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 13%;
 }
 
 .ingredient {
@@ -15,25 +15,27 @@
   flex-direction: column;
   margin-bottom: 20px;
   justify-content: space-between;
-  border: 2px solid rgb(205, 56, 48);
   width: 100%;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
 }
 
 .card-top {
-  background-color: rgb(245, 195, 207);
   color: rgb(205, 56, 48);
-  border-top-left-radius: 28px !important;
-  border-top-right-radius: 28px !important;
 }
 
 .category-title {
   text-align: center;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
 }
 
 .ingredient-body {
   background-color: white;
-  border-bottom-left-radius: 28px;
-  border-bottom-right-radius: 28px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   max-height: 400px;
   overflow: scroll;
   display: flex;
@@ -63,4 +65,9 @@ h1 {
 h2 {
   font-size: 20px;
   font-weight: bolder;
+}
+
+.category-top {
+  background-color:#304630;
+  ;
 }
