@@ -8,13 +8,13 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: 400px;
-  background-image: url('kraft.jpg');
+  background-color: rgb(36, 102, 74);
   background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
 
 .producteur {
-  background-color: rgb(36, 102, 74);
-  margin-top: 220px;
   padding-bottom: 80px;
   z-index: 1000;
   padding-inline: 100%;
