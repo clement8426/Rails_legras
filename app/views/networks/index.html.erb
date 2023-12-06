@@ -17,9 +17,11 @@
       <div class="description">
         <h1><%= network.name %></h1>
         <p class="p-network"><%= network.description %></p>
+        <div class="bouton-suite">
         <p class="read-more">
         <%= link_to 'Voir la Coopérative', network_path(network) %>
         </p>
+        </div>
       </div>
     </div>
   <% end %>
