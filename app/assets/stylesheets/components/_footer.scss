@@ -1,8 +1,5 @@
-.content {
-  flex: 1; /* This will make the content area take up the remaining space */
-}
-
 .footer {
+  // position: absolute;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -11,9 +8,7 @@
   padding: 0px 50px;
   color: rgb(205, 56, 48);
   width: 100%;
-  // position: fixed; /* Fix the position to the bottom */
-  // bottom: 0; /* Position it at the bottom of the viewport */
-  // left: 0;
+  // bottom: 0;
 }
 .footer-links {
   display: flex;
