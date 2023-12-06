@@ -11,7 +11,11 @@ class CartsItemsController < ApplicationController
     @cart_item.ingredient = @ingredient
 
     if @cart_item.save
-      redirect_to network_path(Network.find(@cart.network.id))
+      respond_to do |format|
+        format.html { redirect_to network_path(Network.find(@cart.network.id)) }
+        @html_content = render_to_string partial: 'networks/cart', locals: { cart: @cart }, formats: [:html]
+        format.json { render json: { html: @html_content } }
+      end
     end
   end
 
@@ -39,7 +43,7 @@ class CartsItemsController < ApplicationController
   end
 
   def cart_item_params
-    params.require(:cart_item).permit(:quantity)
+    params.require(:cart_item).permit(:quantity, :cart_id, :ingredient_id)
   end
 
   def set_cart_item

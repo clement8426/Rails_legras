@@ -5,7 +5,7 @@
 }
 
 .image {
-  background-image: url("nappe2.jpg");
+  background-image: url("bg-nappe.png");
   background-size: cover;
   background-position: 25% 75%;
   box-shadow: 10px 5px 5px grey;
@@ -36,6 +36,7 @@
 }
 
 #imagedesc {
+
   margin-top: 10px;
   color: #24664a;
   width: 55%;
@@ -74,7 +75,7 @@
 }
 
 .form {
-  margin-top: auto;
+  margin-top: 100px;
   margin-bottom: auto;
   padding: 40px;
   // max-width: 750px;
@@ -84,7 +85,8 @@
 }
 
 .font-size-40 {
-  font-size: 40px;
+  font-size: 50px;
+  text-align: center;
 
 }
 
@@ -110,10 +112,19 @@
 }
 
 .btn-form-home {
+  color: rgb(205, 56, 48);
+  background-color:rgb(245, 195, 207);
+  border-color: rgb(205, 56, 48);
   flex-grow: 1;
 }
 
 .recolte{
   margin-right: 19px;
   margin-left: -px;
+}
+
+.comment{
+  color: white;
+  text-align: center;
+  font-size: 50px;
 }
