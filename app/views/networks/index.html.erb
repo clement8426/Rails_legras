@@ -14,11 +14,11 @@
           <% end %>
         </ul>
       </div>
-      <div class="description">
+      <div class="description d-flex flex-column">
         <h1><%= network.name %></h1>
-        <p class="p-network"><%= network.description %></p>
+        <p class="p-network flex-grow-1"><%= network.description %></p>
         <div class="bouton-suite">
-        <p class="read-more">
+        <p class="read-more" style="margin-bottom: 0;">
         <%= link_to 'Voir la Coopérative', network_path(network) %>
         </p>
         </div>
