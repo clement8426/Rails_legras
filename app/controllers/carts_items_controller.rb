@@ -23,8 +23,11 @@ class CartsItemsController < ApplicationController
     @cart_item = CartItem.find(params[:id])
     @cart = @cart_item.cart
     if @cart_item.destroy
-      @cart.destroy if @cart.cart_items.empty?
-      redirect_to request.referrer
+      respond_to do |format|
+        format.html { redirect_to network_path(Network.find(@cart.network.id)) }
+        @html_content = render_to_string partial: 'networks/cart', locals: { cart: @cart }, formats: [:html]
+        format.json { render json: { html: @html_content } }
+      end
     end
   end
 
