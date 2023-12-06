@@ -31,8 +31,12 @@
 }
 
 .show_producteur {
+  padding: 0 60px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: -15px; /* Adjusted to offset the margin introduced by negative margin */
+  margin-right: -15px; /* Adjusted to offset the margin introduced by negative margin */
 }
 
 .show_pdt {
@@ -99,6 +103,12 @@
   justify-content: center;
 }
 
+.container-produit-network .card-product-network {
+  flex: 0 0 calc(33.33% - 40px);
+  margin: 50px 8px 8px 8px;
+  box-sizing: border-box;
+}
+
 .bande-verte {
   background-color: rgb(36, 102, 74);
   padding-bottom: 80px;
@@ -155,7 +165,7 @@
   margin-top: 50px;
   position: sticky;
   top: 30px;
-  right: 85px;
+  right: 40px;
   align-self: start;
 
   .top-cart {
