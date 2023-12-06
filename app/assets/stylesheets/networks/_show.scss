@@ -5,7 +5,7 @@
 .container_producteur {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   min-height: 400px;
   background-color: rgb(36, 102, 74);
@@ -15,13 +15,23 @@
 }
 
 .producteur {
-  padding-bottom: 80px;
-  z-index: 1000;
-  padding-inline: 100%;
+  min-width: 100%;
+}
+
+.min-ship {
+  p:first-child {
+    margin-top: 20px;
+    font-size: 1.3em;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .show_producteur {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .show_pdt {
@@ -73,6 +83,7 @@
 }
 
 .nom > h1 {
+  font-size: 40px;
   color: black;
 }
 
@@ -137,7 +148,6 @@
   border-bottom-right-radius: 10px;
 }
 
-
 .fixed-div {
   overflow: auto;
   margin-top: 50px;
@@ -152,6 +162,7 @@
     border-radius: 10px 10px 0 0;
 
     h1 {
+      padding: 0;
       color: white;
     }
   }
@@ -176,8 +187,4 @@
 .form_product_quantity {
   font-size: 30px;
   max-width: 200px;
-}
-
-.background-network{
- background-image: url('kraft.jpg');
 }
