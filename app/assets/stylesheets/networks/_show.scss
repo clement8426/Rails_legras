@@ -8,7 +8,16 @@
   justify-content: space-evenly;
   align-items: center;
   min-height: 400px;
+  background-image: url('kraft.jpg');
+  background-size: cover;
+}
+
+.producteur {
   background-color: rgb(36, 102, 74);
+  margin-top: 220px;
+  padding-bottom: 80px;
+  z-index: 1000;
+  padding-inline: 100%;
 }
 
 .show_producteur {
@@ -128,8 +137,7 @@
   border-bottom-right-radius: 10px;
 }
 
-// .row {
-// }
+
 .fixed-div {
   overflow: auto;
   margin-top: 50px;
@@ -145,7 +153,6 @@
 
     h1 {
       color: white;
-      margin-top: 0;
     }
   }
 
@@ -169,4 +176,8 @@
 .form_product_quantity {
   font-size: 30px;
   max-width: 200px;
+}
+
+.background-network{
+ background-image: url('kraft.jpg');
 }
