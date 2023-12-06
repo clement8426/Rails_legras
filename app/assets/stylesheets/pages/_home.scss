@@ -53,7 +53,11 @@
 ///
 ///
 .banner {
-  padding: 330px 0;
+  // padding: 330px 0;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.3) 16.58%,
@@ -61,20 +65,28 @@
     ),
     url("bg-nappe.png");
   background-size: cover;
-  & > .row {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  // & > .row {
+  //   position: absolute;
+  //   top: 30%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
 }
 
 .form {
-  margin-top: -50px;
-  padding: 80px;
-  max-width: 750px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 40px;
+  // max-width: 750px;
+  max-width: 50vw;
+  border-radius:10px;
+}
+
+.font-size-40 {
+  font-size: 40px;
 
 }
+
 
 .form form {
   display: flex !important;
@@ -100,3 +112,7 @@
   flex-grow: 1;
 }
 
+.recolte{
+  margin-right: 19px;
+  margin-left: -px;
+}
