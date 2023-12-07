@@ -23,13 +23,13 @@ export default class extends Controller {
       .then((data) => {
         this.cartTarget.innerHTML = data.html;
         this.form.reset();
-        const sumOfAll = this.cart.querySelector(".sum-of-all");
-        const shipMin = this.cart.querySelector(".ship");
+        const sumOfAll = this.cartTarget.querySelector(".sum-of-all");
+        const shipMin = this.cartTarget.querySelector(".ship");
         let progressWidth = 0;
         const sum = parseFloat(sumOfAll.innerText);
         const minShippingAmount = parseFloat(shipMin.innerText);
         progressWidth = (sum / minShippingAmount) * 100;
-        this.cart.querySelector(".progress-bar").style.width =
+        this.cartTarget.querySelector(".progress-bar").style.width =
           progressWidth + "%";
       });
   }
