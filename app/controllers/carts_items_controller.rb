@@ -22,10 +22,15 @@ class CartsItemsController < ApplicationController
   def destroy
     @cart_item = CartItem.find(params[:id])
     @cart = @cart_item.cart
+    puts path = Rails.application.routes.recognize_path(request.referrer)
     if @cart_item.destroy
       respond_to do |format|
-        format.html { redirect_to network_path(Network.find(@cart.network.id)) }
-        @html_content = render_to_string partial: 'networks/cart', locals: { cart: @cart }, formats: [:html]
+        if path[:controller] == "networks"
+          format.html { redirect_to request.referrer }
+          @html_content = render_to_string partial: 'networks/cart', locals: { cart: @cart }, formats: [:html]
+        else
+          @html_content = render_to_string partial: 'carts/cart_list', locals: { cart: @cart }, formats: [:html]
+        end
         format.json { render json: { html: @html_content } }
       end
     end
