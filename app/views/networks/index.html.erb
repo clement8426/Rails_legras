@@ -19,7 +19,7 @@
         <div class="text-bottom">
           <div class="img-circle pt-2 d-flex">
             <% @network_farmers[network.id].each do |farmer| %>
-              <%= cl_image_tag farmer.photo.first.key, height: 50, width: 50, class: 'me-3' %>
+              <%= cl_image_tag farmer.photo.first.key, height: 50, width: 50, class: 'me-3 farmer-avatar' %>
             <% end %>
           </div>
           <div class="bouton-suite">
