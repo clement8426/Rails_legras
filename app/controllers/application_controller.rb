@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
-  # after_action :trigger_job
+  after_action :trigger_job
 
   def trigger_job
     if current_user
