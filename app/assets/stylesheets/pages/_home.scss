@@ -55,7 +55,7 @@
 ///
 .banner {
   // padding: 330px 0;
-  height: 80vh;
+  height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,11 +75,11 @@
 }
 
 .form {
-  margin-top: 100px;
+  margin-top: 125px;
   margin-bottom: auto;
   padding: 40px;
   // max-width: 750px;
-  max-width: 50vw;
+  max-width: 75vw;
   border-radius:10px;
   z-index: 1000;
 }
@@ -119,7 +119,7 @@
 }
 
 .recolte{
-  margin-right: 19px;
+  margin-right: 2px;
   margin-left: -px;
 }
 
@@ -127,4 +127,8 @@
   color: white;
   text-align: center;
   font-size: 50px;
+}
+
+.map{
+margin-left: 10px;
 }
