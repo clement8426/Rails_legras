@@ -108,8 +108,10 @@ flex-shrink: 0;
 }
 
 .progress-bar-custom {
-  background: rgb(245,195,207);
-background: linear-gradient(90deg, rgba(245,195,207,1) 8%, rgba(205,48,48,1) 93%);
+
+background: rgb(36, 102, 74);
+//   background: rgb(245,195,207);
+// background: linear-gradient(90deg, rgba(245,195,207,1) 8%, rgba(205,48,48,1) 93%);
 }
 
 .carts {
@@ -151,6 +153,7 @@ background: linear-gradient(90deg, rgba(245,195,207,1) 8%, rgba(205,48,48,1) 93%
   color: white;
   border: white;
   pointer-events: none; // Disable the button
-  width: 15%;
+  max-width: 200px;
+  border-radius: 20px;
   height:40px;
 }
