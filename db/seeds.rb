@@ -29,7 +29,7 @@ network2 = Network.create!(
   name: "Les Jardins Partagés",
   location: "Place de la Bourse, 33000 Bordeaux",
   minimum_shipping_amount: "120",
-  description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables. Livraison les mercredis et samedis dans un rayon de 15km de Paris."
+  description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables."
 )
 network2.photo.attach(io: File.open("app/assets/images/networks/farm (2).jpg"), filename: 'jardins_partages.jpg', content_type: 'image/jpg')
 network2.save
@@ -58,7 +58,7 @@ network5 = Network.create!(
   name: "Nature et Progrès",
   location: "5 Avenue Anatole France, 75007 Paris",
   minimum_shipping_amount: "130",
-  description: "Coopérative d'agriculteurs passionnés, nous proposons une variété de produits locaux et saisonniers. Livraison les mardis et vendredis, priorité aux commandes éco-responsables."
+  description: "Coopérative d'agriculteurs passionnés, nous proposons une variété de produits locaux et saisonniers."
 )
 network5.photo.attach(io: File.open("app/assets/images/networks/farm (5).jpg"), filename: 'nature_progres.jpg', content_type: 'image/jpg')
 network5.save

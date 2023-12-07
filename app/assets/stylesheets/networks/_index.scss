@@ -52,9 +52,21 @@ h2 {
 a {
   font-weight: bolder;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .blog-card {
   border-color: none;
   border-radius: 15px;
+}
+
+img {
+  border-radius: 50%;
+  gap: 5px;
+}
+
+.text-bottom{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
