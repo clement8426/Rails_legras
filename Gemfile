@@ -34,8 +34,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'uri'
 gem 'recipe_scraper'
-gem 'redis'
-gem "sidekiq"
+gem 'redis', '~> 4.7', '< 4.8'
+gem "sidekiq", "~> 6.5", "< 7"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
