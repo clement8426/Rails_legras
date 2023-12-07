@@ -85,11 +85,12 @@
 .my-3{
   background-color: rgb(245, 195, 207);
   color: rgb(205, 56, 48);
+  border-color: rgb(205, 56, 48);
   font-weight: 800;
-  border-radius: 30px;
+  flex-grow: 1;
   border: 2px solid rgb(205, 56, 48);
   text-decoration: none;
-  width: 40%;
+  width: 15%;
   height:40px;
   transition: background-color 0.3s;
   flex-shrink: 0;
@@ -153,4 +154,6 @@ background: linear-gradient(90deg, rgba(245,195,207,1) 8%, rgba(205,48,48,1) 93%
   color: white;
   border: white;
   pointer-events: none; // Disable the button
+  width: 15%;
+  height:40px;
 }
