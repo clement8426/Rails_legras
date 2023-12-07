@@ -116,7 +116,15 @@
   background-color:rgb(245, 195, 207);
   border-color: rgb(205, 56, 48);
   flex-grow: 1;
-}
+  font-weight: 800;
+  border: 2px solid rgb(205, 56, 48);
+  text-decoration: none;
+   width: 15%;
+  height:40px;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  }
+
 
 .recolte{
   margin-right: 2px;
