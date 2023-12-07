@@ -1,0 +1,25 @@
+<div class="top-cart shadow">
+  <h1>Panier</h1>
+</div>
+<div class="bottom-cart shadow">
+  <% if @cart %>
+    <p style="font-size: 20px;">Information panier :</p>
+    <% total_cart_price = 0 %>
+    <% @cart.cart_items.each do |cart_item| %>
+      <div class="cart-item" style="font-size: 20px;">
+        <% item_total_price = cart_item.ingredient.price * cart_item.quantity %>
+        <p><%= cart_item.quantity %> x <%= cart_item.ingredient.name %> <%= item_total_price %>€</p>
+        <%= link_to carts_item_path(cart_item), data: { turbo_method: :delete, cart_items_target: "trash", action: "click->cart-items#delete", cart_items_id_value: cart_item.id.to_i }, class: "btn" do %>
+          <i class="fa-solid fa-trash" style="color: #ff1900;"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="divdubasdupannierdelashowdedesnetworkdenotresite shadow">
+    
+    Total: <%= total_cart_price.to_f %>€
+    <%= link_to "Mon Panier", carts_path, class: "link", id: "mon-panier-network" %>
+  <% else %>
+    <p>Aucun panier </p>
+  <% end %>
+</div>

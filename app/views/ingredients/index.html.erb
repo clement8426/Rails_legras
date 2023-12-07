@@ -1,14 +1,16 @@
 <body>
-  <div class="ingredients-title py-4">
+  <div class="container-produit-show">
+   <div class="title pt-4">
+    <h1 class="page-title"> Nos Produits</h1>
   </div>
   <div id="ingredients-list">
     <% @ingredients.group_by(&:category).each do |category, ingredients| %>
-      <div class="ingredient col-md-4">
-        <div class="card border-red mb-4">
-          <div class="category-top">
+      <div class="ingredient col-md-4 shadow">
+        <div class="cardpasboostrap-index-produit">
+          <div class="category-top shadow">
             <h2 class="category-title py-3"><%= category %></h2>
           </div>
-          <div class="ingredient-body">
+          <div class="ingredient-body shadow">
             <div class="ingredients-grid">
               <% ingredients.each do |ingredient| %>
                 <div class="ingredient-item">
@@ -26,3 +28,4 @@
       </div>
     <% end %>
   </div>
+</div>

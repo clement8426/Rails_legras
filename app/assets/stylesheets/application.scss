@@ -25,6 +25,10 @@
 //   padding-bottom: 6rem;
 // }
 
+body {
+  overflow-x: hidden;
+}
+
 .wrapper {
   background-image: url("kraft.png");
   min-height: calc(100vh - 100px);

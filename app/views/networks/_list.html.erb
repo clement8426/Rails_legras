@@ -1,0 +1,34 @@
+<div class="col-md-8" >
+
+  <div class="container-produit-network">
+  <% network_farmers.each do |farmer| %>
+    <% farmer.ingredients.each do |ingredient| %>
+      <div class="card-product-network">
+        <div class="photo-produits shadow">
+          <%= cl_image_tag ingredient.photo.first.key, height: 100, width: 100 %>
+        </div>
+
+        <div class="dnd p-3 mt-2 text-center shadow">
+          <h5><%= ingredient.name %></h5>
+          <h5>Prix : <%= ingredient.price %>€</h5>
+
+            <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), turbo_method: :post, html: { class: 'simple-form', data: { cart_items_target: "form", action: "submit->cart-items#create" } } do |f| %>
+              <div class="form_product_quantity" style="display: flex; align-items: center;">
+                <button type="button" onclick="decrementQuantity('<%= f.object_id %>')" class="quantity-modifier quantity-decrement tamereettonpere">-</button>
+                <%= f.input :quantity, as: :numeric, input_html: { id: "quantity_#{f.object_id}", value: 1, min: 1, class: 'quantity-input', style: "border: 0; outline: none; background-color: transparent; text-align: center; font-size: 20px;" }, label: false %>
+                <%= f.input :cart_id, value: @cart.id, as: :hidden %>
+                <%= f.input :ingredient_id, value: ingredient.id, as: :hidden %>
+                <button type="button" onclick="incrementQuantity('<%= f.object_id %>')" class="quantity-modifier quantity-increment tamereettonpere">+</button>
+              </div>
+              <%= f.button :submit, "Ajouter au panier", class: "tamere" %>
+            <% end %>
+
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+  <div class="col-md-4 fixed-div" data-cart-items-target="cart">
+    <%= render "networks/cart", locals: { cart: @cart } %>
+  </div>
