@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :carts, only: [:index, :show]
   resources :ingredients, only: [:index, :show]
   resources :carts_items, only: [:create, :destroy]
+  resources :carts_items do
+    get :update_progress, on: :collection
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
