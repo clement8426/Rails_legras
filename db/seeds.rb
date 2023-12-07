@@ -17,7 +17,7 @@ Network.destroy_all
 
 p "creating network table..."
 network1 = Network.create!(
-  name: "Coopérative des Terroirs de France",
+  name: "Coopérative des Terroirs de France : Rennes",
   location: "12 Rue de la Monnaie, 35000 Rennes",
   minimum_shipping_amount: "100",
   description: "Nous livrons le mardi et le vendredi. Nos produits sont frais et de saison et cultivés dans le respect de l'environnement avec beaucoup d'amour."
@@ -26,7 +26,7 @@ network1.photo.attach(io: File.open("app/assets/images/networks/farm (1).jpg"), 
 network1.save
 
 network2 = Network.create!(
-  name: "Les Jardins Partagés",
+  name: "Les Jardins Partagés : Bordeaux",
   location: "Place de la Bourse, 33000 Bordeaux",
   minimum_shipping_amount: "120",
   description: "Coopérative engagée pour une agriculture durable, nous offrons des produits biologiques et équitables."
@@ -36,7 +36,7 @@ network2.save
 
 
 network3 = Network.create!(
-  name: "Les Fermes de France",
+  name: "Les Fermes de France : Nancy",
   location: "Place Stanislas, 54000 Nancy",
   minimum_shipping_amount: "90",
   description: "Petite coopérative familiale, nous fournissons des produits locaux frais. Livraison possible les lundis et jeudis dans Paris intra-muros."
@@ -46,7 +46,7 @@ network3.save
 
 
 network4 = Network.create!(
-  name: "Harmonie Agricole",
+  name: "Harmonie Agricole : Annecy",
   location: "3 Passage de l'Île, 74000 Annecy",
   minimum_shipping_amount: "110",
   description: "Nous sommes spécialisés dans les fruits et légumes bio, livrés frais à votre porte. Livraisons disponibles le mercredi et le samedi dans et autour de Paris."
@@ -55,7 +55,7 @@ network4.photo.attach(io: File.open("app/assets/images/networks/farm (4).jpg"), 
 network4.save
 
 network5 = Network.create!(
-  name: "Nature et Progrès",
+  name: "Nature et Progrès : Paris",
   location: "5 Avenue Anatole France, 75007 Paris",
   minimum_shipping_amount: "130",
   description: "Coopérative d'agriculteurs passionnés, nous proposons une variété de produits locaux et saisonniers."

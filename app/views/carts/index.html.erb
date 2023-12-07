@@ -6,7 +6,7 @@
     <div class="cart-list" data-controller="cart-items">
       <% @carts.each do |cart| %>
         <% unless cart.cart_items.empty? %>
-          <div class="col-md-4 list-group-flush m-5" id="cart<%= cart.network.name %>-items" data-cart-items-target="cart">
+          <div class="col-md-5 list-group-flush m-5" id="cart<%= cart.network.name %>-items" data-cart-items-target="cart">
             <%= render "carts/cart_list", cart: cart %>
           </div>
         <% end %>

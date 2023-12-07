@@ -1,4 +1,4 @@
-<div class="col-md-9" >
+<div class="col-md-8" >
 
   <div class="container-produit-network">
   <% network_farmers.each do |farmer| %>
@@ -29,6 +29,6 @@
   <% end %>
   </div>
 </div>
-  <div class="col-md-3 fixed-div" data-cart-items-target="cart">
+  <div class="col-md-4 fixed-div" data-cart-items-target="cart">
     <%= render "networks/cart", locals: { cart: @cart } %>
   </div>

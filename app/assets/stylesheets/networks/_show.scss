@@ -10,7 +10,7 @@
   min-height: 400px;
   background-size: cover;
   margin-top: 20px;
-  
+
 }
 
 .producteur {
@@ -23,6 +23,7 @@
     margin-top: 20px;
     font-size: 1.3em;
   }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,8 +36,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-left: -15px; /* Adjusted to offset the margin introduced by negative margin */
-  margin-right: -15px; /* Adjusted to offset the margin introduced by negative margin */
+  margin-left: -15px;
+  /* Adjusted to offset the margin introduced by negative margin */
+  margin-right: -15px;
+  /* Adjusted to offset the margin introduced by negative margin */
 }
 
 .show_pdt {
@@ -74,11 +77,9 @@
   flex-direction: column;
   padding: 20px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 60%,
-    rgba(36, 102, 74, 1) 60%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 1) 60%,
+      rgba(36, 102, 74, 1) 60%);
 }
 
 .form_product_quantity {
@@ -87,7 +88,7 @@
   align-items: center;
 }
 
-.nom > h1 {
+.nom>h1 {
   font-size: 40px;
   color: white;
 }
@@ -100,7 +101,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 
@@ -147,12 +148,17 @@
 
 .tamere {
   color: rgb(205, 56, 48);
-  background-color: rgb(245, 195, 207);
-  border: 0px;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+  background-color:rgb(245, 195, 207);
+  border-color: rgb(205, 56, 48);
+  flex-grow: 1;
+  font-weight: 800;
+  border: 2px solid rgb(205, 56, 48);
+  text-decoration: none;
+  width: 60%;
+  height:45px;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  }
 
 .dnd {
   min-width: 310px;
@@ -162,11 +168,12 @@
 }
 
 .fixed-div {
+  width: 30%;
   overflow: auto;
   margin-top: 50px;
   position: sticky;
   top: 30px;
-  right: 40px;
+  right: 50px;
   align-self: start;
 
   .top-cart {
@@ -210,7 +217,8 @@
 }
 
 .cart-item p {
-  margin: 0; /* Adjust as needed */
+  margin: 0;
+  /* Adjust as needed */
 }
 
 
