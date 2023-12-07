@@ -1,14 +1,15 @@
 
 
 <div class="top-cart-index">
-  <h2 class="cart-number text-center pt-4 pb-4">Panier "<%= cart.network.name %>"</h2>
+  <h2 class="cart-number text-center pt-4 pb-4" style="font-size:25px">Panier "<%= cart.network.name %>"</h2>
 </div>
 <% total_cart_price = 0 %>
 <div class="bottom-card-index shadow">
   <div class="flex-grow-1">
     <% cart.cart_items.each do |cart_item| %>
       <div class="block d-flex justify-content-between tonpere">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center"style="
+    font-size: 20px";>
           <%= cart_item.quantity %> x <%= cart_item.ingredient.name %>
         </div>
         <div class="text-right d-flex align-items-center justify-content-between">
@@ -31,7 +32,7 @@
 <p class="d-none ship"><%= cart.network.minimum_shipping_amount.to_f %></p>
 <p class="d-none sum-of-all"><%= total_cart_price.to_f %></p>
 <div class="d-flex justify-content-between align-items-center me-3">
-  <p class="text-panier ms-1">Total panier: <%= total_cart_price.to_f %> € </p>
+  <p class="text-panier ms-1"style="font-size:23px">Total panier: <%= total_cart_price.to_f %> € </p>
   <button class="my-3 btn button-gris">Payer</button>
   </div>
 </div>
