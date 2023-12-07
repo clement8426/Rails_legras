@@ -231,6 +231,7 @@
   border-bottom-right-radius: 10px;
   padding: 20px;
   font-size: 20px;
+  font-weight: bolder;
 
   p {
     margin: 0;
@@ -245,10 +246,8 @@
     margin-top: 10px;
   }
 
-  #mon-panier-network {
-    border: black solid 2px;
-    border-radius: 20px;
-    padding: 5px;
-    margin-top: 10px;
-  }
+#mon-panier-network {
+  border: black solid 2px;
+  padding: 5px;
+  font-size: 18px;
 }
