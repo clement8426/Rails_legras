@@ -1,5 +1,7 @@
 <body>
-  <div class="ingredients-title py-4">
+  <div class="container-produit-show">
+   <div class="title pt-4">
+    <h1 class="page-title"> Nos Produits</h1>
   </div>
   <div id="ingredients-list">
     <% @ingredients.group_by(&:category).each do |category, ingredients| %>
@@ -26,3 +28,4 @@
       </div>
     <% end %>
   </div>
+</div>
