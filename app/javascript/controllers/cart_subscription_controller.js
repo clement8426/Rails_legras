@@ -17,14 +17,23 @@ export default class extends Controller {
   buildCart(data) {
     console.log(data);
     const recipe_name = data.recipe_name
+    const recipe_spec = data.recipe_spec
     const recipe_ingredients = data.recipe_ingredients
     const recipe_steps = data.recipe_steps
-    this.cartTarget.innerHTML = data.recipe_name
-    for(const ingredient of recipe_ingredients) {
-      this.cartTarget.innerHTML += ingredient
-    }
-    for(const step of recipe_steps) {
-      this.cartTarget.innerHTML += step
-    }
+    const recipe_img = data.recipe_img
+
+    this.cartTarget.innerHTML = `<img src="${recipe_img}" alt="${recipe_name}">`;
+    this.cartTarget.innerHTML = `<h1>${data.recipe_name}</h1>`;
+
+    recipe_spec.forEach(spec => {
+      this.cartTarget.innerHTML += `<p>${spec}</p>`;
+    });
+    recipe_ingredients.forEach(ingredient => {
+      this.cartTarget.innerHTML += `<li>${ingredient}</li>`;
+    });
+
+    recipe_steps.forEach(step => {
+      this.cartTarget.innerHTML += `<p>${step}</p>`;
+    });
   }
 }
