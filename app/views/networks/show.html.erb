@@ -1,5 +1,5 @@
 
-<div class="background-network">
+<div class="background-network" data-controller="cart">
   <div class="container_producteur">
     <div class="producteur">
       <div class="top-producteur nom">
@@ -26,21 +26,3 @@
     </div>
   </div>
 </div>
-
-
-
-<script>
-  function incrementQuantity(formId) {
-    var input = document.getElementById("quantity_" + formId);
-    var value = parseInt(input.value);
-    input.value = value + 1;
-  }
-
-  function decrementQuantity(formId) {
-    var input = document.getElementById("quantity_" + formId);
-    var value = parseInt(input.value);
-    if (value > 1) {
-      input.value = value - 1;
-    }
-  }
-</script>

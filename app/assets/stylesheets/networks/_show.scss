@@ -10,7 +10,6 @@
   min-height: 400px;
   background-size: cover;
   margin-top: 20px;
-  
 }
 
 .producteur {
@@ -201,21 +200,19 @@
   max-width: 200px;
 }
 
-
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Add more styling as needed */
 }
 
 .cart-item p {
-  margin: 0; /* Adjust as needed */
+  margin: 0;
 }
-
 
 .divdubasdupannierdelashowdedesnetworkdenotresite {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
@@ -225,14 +222,23 @@
   padding: 20px;
   font-size: 20px;
 
-}
+  p {
+    margin: 0;
+  }
+  .progress {
+    width: 83%;
+    margin: 0 0 10px 0;
+  }
 
-.sum-of-all {
-  align-items: center;
-}
+  .sum-of-all {
+    text-align: center;
+    margin-top: 10px;
+  }
 
-#mon-panier-network {
-  border: black solid 2px;
-  border-radius: 20px;
-  padding: 5px;
+  #mon-panier-network {
+    border: black solid 2px;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+  }
 }

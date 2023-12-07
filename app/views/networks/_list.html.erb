@@ -14,11 +14,11 @@
 
             <%= simple_form_for @cart_item, url: carts_items_path(network_id: farmer.network, ingredient_id: ingredient), turbo_method: :post, html: { class: 'simple-form', data: { cart_items_target: "form", action: "submit->cart-items#create" } } do |f| %>
               <div class="form_product_quantity" style="display: flex; align-items: center;">
-                <button type="button" onclick="decrementQuantity('<%= f.object_id %>')" class="quantity-modifier quantity-decrement tamereettonpere">-</button>
-                <%= f.input :quantity, as: :numeric, input_html: { id: "quantity_#{f.object_id}", value: 1, min: 1, class: 'quantity-input', style: "border: 0; outline: none; background-color: transparent; text-align: center; font-size: 20px;" }, label: false %>
+                <button type="button" class="quantity-modifier quantity-decrement tamereettonpere" data-action="click->cart-items#decrement">-</button>
+                <%= f.input :quantity, as: :numeric, input_html: { id: "quantity_#{f.object_id}",value: 1,  min: 1, class: 'quantity-input', style: "border: 0; outline: none; background-color: transparent; text-align: center; font-size: 20px;", data: { cart_items_target: "quantity" } }, label: false %>
                 <%= f.input :cart_id, value: @cart.id, as: :hidden %>
                 <%= f.input :ingredient_id, value: ingredient.id, as: :hidden %>
-                <button type="button" onclick="incrementQuantity('<%= f.object_id %>')" class="quantity-modifier quantity-increment tamereettonpere">+</button>
+                <button type="button" class="quantity-modifier quantity-increment tamereettonpere" data-action="click->cart-items#increment">+</button>
               </div>
               <%= f.button :submit, "Ajouter au panier", class: "tamere" %>
             <% end %>
@@ -30,5 +30,5 @@
   </div>
 </div>
   <div class="col-md-3 fixed-div" data-cart-items-target="cart">
-    <%= render "networks/cart", locals: { cart: @cart } %>
-  </div>
+    <%= render "networks/cart", cart: @cart %>
+  </div>ç
