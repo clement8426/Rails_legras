@@ -1,6 +1,7 @@
 .cart-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 50%;
   border-color: rgb(205, 56, 48);
