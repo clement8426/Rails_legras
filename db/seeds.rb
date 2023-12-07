@@ -570,16 +570,22 @@ ingredient70.photo.attach(io: URI.open('https://assets.afcdn.com/recipe/20170607
 ingredient70.save
 p "creating ingredients table 90/90"
 
-p "creating user_ingredients table..."
-User.find_each do |user|
-  ingredient_ids = Ingredient.pluck(:id).sample(3)
 
-  ingredient_ids.each do |ingredient_id|
-    UserIngredient.create!(
-      user_id: user.id,
-      ingredient_id: ingredient_id
-    )
-  end
+# Trouver les ingrédients spécifiques pour chaque utilisateur
+vin_ingredients = Ingredient.where(category: "Vin et spiritueux").limit(4)
+viandes_ingredients = Ingredient.where(category: "Viandes et volailles").limit(4)
+fromages_ingredients = Ingredient.where(category: "Fromages").limit(4)
+
+# Attribuer les ingrédients aux utilisateurs spécifiques
+vin_ingredients.each { |ingredient| UserIngredient.find_or_create_by(user: user15, ingredient: ingredient) }
+viandes_ingredients.each { |ingredient| UserIngredient.find_or_create_by(user: user16, ingredient: ingredient) }
+fromages_ingredients.each { |ingredient| UserIngredient.find_or_create_by(user: user17, ingredient: ingredient) }
+
+# Trouver tous les utilisateurs (à l'exception des utilisateurs spécifiques)
+all_users = User.where.not(id: [user15.id, user16.id, user17.id])
+
+# Attribuer 4 ingrédients aléatoires à chaque utilisateur restant
+all_users.each do |user|
+  random_ingredients = Ingredient.limit(4).order("RANDOM()")
+  random_ingredients.each { |ingredient| UserIngredient.find_or_create_by(user: user, ingredient: ingredient) }
 end
-
-p "cooooollllll"
