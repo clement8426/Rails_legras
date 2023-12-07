@@ -2,13 +2,12 @@
   <div class="title pt-4">
     <h1 class="page-title"> Nos Coopératives</h1>
   </div>
-
   <% @networks.each do |network| %>
     <div class="blog-card">
       <div class="meta">
         <div class="photo" style="background-image: url('<%= cl_image_path(network.photo.last.key) %>');"></div>
         <ul class="details">
-        <h2>Les agriculteurs</h2>
+          <h2>Les agriculteurs</h2>
           <% @network_farmers[network.id].each do |farmer| %>
             <li class="author"><%= farmer.name %></li>
           <% end %>
@@ -17,10 +16,17 @@
       <div class="description d-flex flex-column">
         <h1><%= network.name %></h1>
         <p class="p-network flex-grow-1"><%= network.description %></p>
-        <div class="bouton-suite">
-        <p class="read-more" style="margin-bottom: 0;">
-        <%= link_to 'Voir la Coopérative', network_path(network) %>
-        </p>
+        <div class="text-bottom">
+          <div class="img-circle pt-2 d-flex">
+            <% @network_farmers[network.id].each do |farmer| %>
+              <%= cl_image_tag farmer.photo.first.key, height: 50, width: 50, class: 'me-3 farmer-avatar' %>
+            <% end %>
+          </div>
+          <div class="bouton-suite">
+            <p class="read-more pb-2" style="margin-bottom: 0;">
+              <%= link_to 'Voir la Coopérative', network_path(network) %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
