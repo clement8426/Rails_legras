@@ -15,7 +15,7 @@
       </div>
       <div class="description d-flex flex-column">
         <h1><%= network.name %></h1>
-        <p class="p-network flex-grow-1"><%= network.description %></p>
+        <p class="p-network flex-grow-1"><%= network.description.truncate(100) %></p>
         <div class="text-bottom">
           <div class="img-circle pt-2 d-flex">
             <% @network_farmers[network.id].each do |farmer| %>

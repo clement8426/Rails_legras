@@ -53,6 +53,7 @@ export default class extends Controller {
         const sum = parseFloat(sumOfAll.innerText);
         const minShippingAmount = parseFloat(shipMin.innerText);
         progressWidth = (sum / minShippingAmount) * 100;
+        console.log(sum);
         this.cart.querySelector(".progress-bar").style.width = progressWidth + "%";
       })
   }
