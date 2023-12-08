@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
-before_action :authenticate_user! # Ensure the user is logged in
+  before_action :authenticate_user! # Ensure the user is logged in
+
+  after_action :trigger_job, only: [:index]
 
   def index
     @user = current_user
